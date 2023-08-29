@@ -1,0 +1,418 @@
+/* Reset default margin and padding */
+body, h1, h2, h3, ul, p, li {
+    margin: 5px;
+    padding: 0;
+}
+
+/* Set a background color and font */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 10px;
+    text-align: center;
+}
+
+/* Style the header */
+header {
+    background-color: white;
+    color: white;
+    padding: 10px;
+}
+
+header h1 {
+    font-size: 24px;
+}
+
+h2{
+    color: #702f8a;
+    margin-bottom: 15px;
+    font-size: 50px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav li {
+    margin-right: 0px;
+}
+
+nav>ul>li>a{
+    padding: 20px;
+}
+
+nav>ul>li>a:hover{
+    background-color: #f4f4f4;
+    color: #702f8a;
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Style sections */
+section {
+    padding: 30px;
+    margin: 20px 0;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Style buttons */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #702f8a;;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    border-width: 0px;
+}
+
+/* Style footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #702f8a;
+    color: white;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+    
+    nav li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+li {
+    margin: 20px;
+    list-style-type: none;
+}
+
+.horizentalList{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    margin-right: 100px;
+}
+
+#banner{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: 10px;
+}
+
+#WIE_logo{
+    width: 20%;
+    margin-right: 200px;
+}
+
+#WIELS_logo{
+    width: 40%;
+    margin: 10px;
+    justify-self: end;
+}
+#navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+
+
+form>input{
+    border-radius: 10px;
+    width: 250px;
+    height: 25px;
+    border-width: 1px ;
+}
+
+#teamMembers>li>img{
+    border-radius: 50px;
+}
+
+
+
+nav{
+    background-color: #702f8a;
+    border-radius: 50px;
+    padding: 5px;
+    display: flex;
+}
+
+#WIE_logo{
+    margin-right: 40px;
+}
+
+#intro{
+    background-image: linear-gradient(to right,#702f8a, #8af74a);
+    color: #f4f4f4;
+    font-size: medium;
+    border-radius: 10px;
+    padding: 0px;
+    text-align: center;
+}
+
+#intro>img{
+    width: 100%;
+    border-radius: 10px;
+}
+#intro>a{
+    
+    text-decoration: none;
+    background-color: #f4f4f4;
+    padding-inline: 20px;
+    align-self: center;
+    color: #333;
+    border-radius: 10px;
+    margin-top: 50px;
+    font-size: medium;
+}
+
+#intro>a:hover{
+    color: #702f8a;
+    font-size: large;
+}
+
+#intro>p{
+    margin-bottom: 20px;
+}
+
+#about>p{
+    font-size: large;
+    margin: 10px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#hourly_program>li{
+   display: flex;
+   align-items: center;
+   justify-content: left;
+   border-width: 3px;
+   border-color: #333;
+   margin: 2px;
+   padding: 0px;
+   font-size: large;
+   transition: background-color 0.3s, color 0.3s;
+   width: 80%; 
+
+
+}
+
+#hourly_program>li:hover #hourly_program>li>h5{
+    background-color: #f4f4f4;
+} 
+
+#hourly_program>li:hover{
+    background-color: #702f8a;
+    background-image: linear-gradient(to right, #702f8a,#8af74a);
+    color: #f4f4f4;
+    border-radius: 50px;
+    font-size: large;
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+@keyframes borderRadiusTransition {
+    from {
+        border-radius: 10px; /* Start with 10px */
+    }
+    to {
+        border-radius: 50px; /* End with 30px */
+    }
+}
+
+#hourly_program > li:hover {
+    animation: borderRadiusTransition 0.5s ease; /* Adjust the duration and easing as needed */
+}
+
+
+
+#hourly_program>li>h5{
+    margin-right: 50px;
+    background-color: #702f8a;
+    color: #f4f4f4;
+    border-radius: 50px;
+    padding: 20px;
+}
+
+#day1_program{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#day1_program>div>img{
+    width: 90%;
+    height: auto;
+    border-radius: 10px;
+    margin:30px;
+}
+
+#day1_program h3{
+    font-size: 50px;
+}
+#registration{
+    text-align: center;
+}
+
+#clock{
+    margin: 60px;
+    font-size: 80px;
+}
+
+#registrationLinkContainer{
+    margin: 30px;
+    padding: 30px;
+}
+
+#registrationLink{
+    text-decoration: none;
+    padding: 20px;
+    background-color: #702f8a;
+    color: #f4f4f4;
+    border-radius: 40px;
+    padding-inline: 50px;
+}
+
+#registrationLink:hover{
+    background-image: linear-gradient(to right, #702f8a,#8af74a);
+}
+
+#registration>p{
+    margin-bottom: 50px;
+}
+
+#table_centered{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+#table_centered>table{
+    width: 70%;
+}
+#table_centered th{
+    color: #f4f4f4;
+    background-color: #702f8a;
+    padding: 30px;
+    font-size: large;
+}
+#table_centered td{
+    padding: 20px;
+    border: 1px black solid;
+    margin: 0px;
+}
+
+#auiDescription{
+    text-align: left;
+    display: flex;
+    align-items: center;
+    margin-bottom: 70px;
+}
+
+#auiDescription>img{
+    width: 300px;
+    margin: 50px;
+}
+
+#auiDescription>p{
+    color: #333;
+    font-size: large;
+    margin: 15px;
+    padding: 5px;
+}
+
+#auiLocation{
+    text-align: center;
+    margin: 20px;
+}
+
+#auiLocation>img{
+    border-radius: 20px;
+    margin-right: 70px;
+}
+#auiLocation>a{
+    text-decoration: none;
+    color: #702f8a;
+}
+
+
+#teamMembers{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#teamMembers tr{
+    margin: 20px;
+}
+
+#teamMembers td{
+    padding: 50px;
+    margin: 50px;
+}
+
+#teamMembers img{
+    width: 200px;
+    border-radius: 100px;
+}
+
+#teamMembers a{
+    text-decoration: none;
+    color: #702f8a;
+}
+
+#contactContainer{
+    display: block;
+    align-items: center;
+    justify-content: center;
+}
+
+#contactInfo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#speakersList img{
+    width: 150px;
+    border-radius: 75px;
+}
+
+#speakersList{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body{
+    background-image: linear-gradient(white, rgb(249, 231, 235));  
+}
+
+.large_text{
+    font-size: 50px;
+}
+
+section:hover{
+    font-weight: 600;
+    box-shadow: 10px 10px 5px gainsboro;
+}
