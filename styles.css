@@ -470,3 +470,8 @@ footer {
 .speakerContainer{
     margin: 30px;
 }
+
+#sponsorsList img{
+    width: 170px;
+    margin: 20px;
+}
