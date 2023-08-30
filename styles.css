@@ -401,12 +401,12 @@ nav{
     justify-content: center;
 }
 
-#speakersList img{
+.speakersList img{
     width: 150px;
     border-radius: 75px;
 }
 
-#speakersList{
+.speakersList{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -461,4 +461,12 @@ footer {
 }
 #socialMedia a{
     margin: 7px;
+}
+
+#socialMedia>a>img{
+    width: 25px;
+}
+
+.speakerContainer{
+    margin: 30px;
 }
