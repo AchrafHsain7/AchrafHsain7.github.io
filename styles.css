@@ -176,19 +176,20 @@ nav{
     width: 100%;
     border-radius: 10px;
 }
-#intro>a{
+#externalLinks>a{
     
     text-decoration: none;
     background-color: #f4f4f4;
-    padding-inline: 20px;
+    padding-inline: 30px;
     align-self: center;
     color: #333;
     border-radius: 10px;
     margin-top: 50px;
     font-size: medium;
+    margin: 0px;
 }
 
-#intro>a:hover{
+#externalLinks>a:hover{
     color: #702f8a;
     font-size: large;
 }
