@@ -78,17 +78,7 @@ section {
 
 
 
-/* Media queries for responsiveness */
-@media screen and (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-    }
-    
-    nav li {
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
-}
+
 
 li {
     margin: 20px;
@@ -121,6 +111,10 @@ li {
     width: 25%;
     margin: 20px;
     margin-left: 50px;
+}
+
+#WIE_morocco{
+    width: 25%;
 }
 
 #WIE_morocco h4{
@@ -221,8 +215,6 @@ nav{
    font-size: large;
    transition: background-color 0.3s, color 0.3s;
    width: 80%; 
-
-
 }
 
 #hourly_program>li:hover #hourly_program>li>h5{
@@ -261,20 +253,20 @@ nav{
     padding: 20px;
 }
 
-#day1_program{
+.day_program{
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#day1_program>div>img{
+.day_program>div>img{
     width: 90%;
     height: auto;
     border-radius: 10px;
     margin:30px;
 }
 
-#day1_program h3{
+.day_program h3{
     font-size: 50px;
 }
 #registration{
@@ -357,6 +349,7 @@ nav{
 #auiLocation>img{
     border-radius: 20px;
     margin-right: 70px;
+    height: 350px;
 }
 #auiLocation>a{
     text-decoration: none;
@@ -364,20 +357,18 @@ nav{
 }
 
 
-#teamMembers{
+.teamRow{
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    margin: 40px;
+    flex-direction: row;
 }
 
-#teamMembers tr{
+.teamRow>div{
     margin: 20px;
 }
 
-#teamMembers td{
-    padding: 50px;
-    margin: 50px;
-}
 
 #teamMembers img{
     width: 200px;
@@ -473,5 +464,166 @@ footer {
 
 #sponsorsList img{
     width: 170px;
-    margin: 20px;
+    margin: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+    
+    nav li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    #WIE_morocco h4{
+        font-size: small;
+    }
+
+    .day_program{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    #hourly_program{
+        margin: 0px;
+        padding: 0px;
+    }
+
+    #program{
+        margin: 0px;
+        padding: 0px;
+    }
+
+    #hourly_program>li>h5{
+        background-color: #702f8a;
+        color: #f4f4f4;
+        border-radius: 50px;
+        padding: 20px;
+        font-size: medium;
+    }
+
+    #hourly_program>li>div{
+        margin: 10px;
+        font-size: medium;
+    }
+
+    #hourly_program>li:hover{
+        background-color: #702f8a;
+        background-image: linear-gradient(to right, #702f8a,#8af74a);
+        color: #f4f4f4;
+        border-radius: 50px;
+        font-size: medium;
+        transition: background-color 0.3s, color 0.3s; 
+        padding-right: 40px;
+    }
+
+    #clock{
+        margin: 30px;
+        font-size: 40px;
+    }
+
+    #registrationLinkContainer{
+        margin: 20px;
+        padding: 20px;
+    }
+
+    #registration h3{
+        font-size: 40px;
+    }
+
+    #table_centered th{
+        padding-inline: 50px;
+    }
+
+    #table_centered{
+        margin-bottom: 50px;
+    }
+
+    #auiDescription{
+        flex-direction: column;
+    }
+
+    #auiDescription img{
+        width: 50vw;
+    }
+
+    #auiLoaction{
+        margin: 0px;
+        padding: 0px;
+    }
+
+    #auiLocation img{
+        width: 75vw;
+        margin: 0px;
+    }
+
+    #auiLocation iframe{
+        width: 70vw;
+    }
+
+    .speakersList img{
+        width: 150px;
+        border-radius: 75px;
+    }
+    
+    .speakersList{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .speakerContainer{
+        margin: 10px;
+    }
+    #sponsors{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #sponsorsList{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-left: 30vw;
+    }
+ 
+
+    #sponsorsList img{
+        width: 170px;
+        margin: 20px;
+    }
+
+    .teamRow{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 40px;
+        flex-direction: column;
+    }
+    
+    .teamRow>div{
+        margin: 10px;
+    }
 }
