@@ -367,7 +367,7 @@ nav{
 }
 
 .teamRow>div{
-    margin: 20px;
+    margin: 40px;
 }
 
 
@@ -379,6 +379,11 @@ nav{
 #teamMembers a{
     text-decoration: none;
     color: #702f8a;
+}
+
+#teamMembers>div>div>a:hover img{
+    transform: scale(1.2);
+    border-radius: 70px;
 }
 
 #contactContainer{
@@ -453,6 +458,7 @@ footer {
 }
 #socialMedia a{
     margin: 7px;
+    text-decoration: none; 
 }
 
 #socialMedia>a>img{
@@ -461,6 +467,21 @@ footer {
 
 .speakerContainer{
     margin: 30px;
+    width: 200px;
+    border-radius: 100px;
+}
+
+.speakerContainer a{
+    text-decoration: none;
+}
+
+.speakerContainer img{
+    width: 150px;
+}
+
+.speakerContainer:hover img{
+    transform: scale(1.2);
+    border-radius: 50px;
 }
 
 #sponsorsList img{
