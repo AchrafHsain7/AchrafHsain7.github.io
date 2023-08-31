@@ -1,3 +1,15 @@
+function mobileResponsive(matches) {
+    var themePicture1 = document.getElementById('themePicture1');
+    var day1 = document.getElementById('day1');
+
+    if (matches) {
+        themePicture1.appendChild(day1);
+    }
+}
+
+
+
+
 document.addEventListener('DOMContentLoaded', function(){
 
     const eventDate = new Date('November 15, 2023 00:00:00').getTime();
@@ -19,5 +31,16 @@ document.addEventListener('DOMContentLoaded', function(){
         }
 
     } ,1000)
+
+    var width = window.matchMedia("(max-width: 768px)");
+
+    function handleWidthChange(event) {
+        mobileResponsive(event.matches);
+    }
+    
+    width.addEventListener("change", handleWidthChange);
+    
+    // Call it initially as well
+    handleWidthChange(width);
         
 })

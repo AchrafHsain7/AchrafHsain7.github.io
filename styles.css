@@ -205,7 +205,7 @@ nav{
     margin-bottom: 20px;
 }
 
-#hourly_program>li{
+.hourly_program>li{
    display: flex;
    align-items: center;
    justify-content: left;
@@ -218,11 +218,11 @@ nav{
    width: 80%; 
 }
 
-#hourly_program>li:hover #hourly_program>li>h5{
+.hourly_program>li:hover .hourly_program>li>h5{
     background-color: #f4f4f4;
 } 
 
-#hourly_program>li:hover{
+.hourly_program>li:hover{
     background-color: #702f8a;
     background-image: linear-gradient(to right, #702f8a,#8af74a);
     color: #f4f4f4;
@@ -240,13 +240,13 @@ nav{
     }
 }
 
-#hourly_program > li:hover {
+.hourly_program > li:hover {
     animation: borderRadiusTransition 0.5s ease; /* Adjust the duration and easing as needed */
 }
 
 
 
-#hourly_program>li>h5{
+.hourly_program>li>h5{
     margin-right: 50px;
     background-color: #702f8a;
     color: #f4f4f4;
@@ -504,7 +504,7 @@ footer {
         flex-direction: column;
     }
 
-    #hourly_program{
+    .hourly_program{
         margin: 0px;
         padding: 0px;
     }
@@ -514,7 +514,7 @@ footer {
         padding: 0px;
     }
 
-    #hourly_program>li>h5{
+    .hourly_program>li>h5{
         background-color: #702f8a;
         color: #f4f4f4;
         border-radius: 50px;
@@ -522,12 +522,12 @@ footer {
         font-size: medium;
     }
 
-    #hourly_program>li>div{
+    .hourly_program>li>div{
         margin: 10px;
         font-size: medium;
     }
 
-    #hourly_program>li:hover{
+    .hourly_program>li:hover{
         background-color: #702f8a;
         background-image: linear-gradient(to right, #702f8a,#8af74a);
         color: #f4f4f4;
