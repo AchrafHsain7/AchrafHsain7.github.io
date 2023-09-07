@@ -290,8 +290,8 @@ form>input{
 }
 
 #clock{
-    margin: 60px;
-    font-size: 80px;
+    margin: 30px;
+    font-size: 40px;
 }
 
 #registrationLinkContainer{
@@ -648,29 +648,30 @@ footer {
     .hourly_program>li>h5{
         background-color: #702f8a;
         color: #f4f4f4;
-        border-radius: 50px;
+        border-radius: 5px;
         padding: 20px;
-        font-size: medium;
+        margin: 10px;
+        font-size: small;
     }
 
     .hourly_program>li>div{
         margin: 10px;
-        font-size: medium;
+        font-size: small;
     }
 
     .hourly_program>li:hover{
         background-color: #702f8a;
         background-image: linear-gradient(to right, #702f8a,#8af74a);
         color: #f4f4f4;
-        border-radius: 50px;
-        font-size: medium;
+        border-radius: 5px;
+        font-size: small;
         transition: background-color 0.3s, color 0.3s; 
         padding-right: 40px;
     }
 
     #clock{
         margin: 10px;
-        font-size: 20px;
+        font-size: 30px;
     }
 
     #registrationLinkContainer{
