@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap:http://AchrafHsain7.github.io/sitemap.xml 

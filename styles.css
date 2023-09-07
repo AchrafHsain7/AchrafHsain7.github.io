@@ -12,6 +12,7 @@ body {
     margin: 10px;
     padding: 10px;
     text-align: center;
+    background-image: linear-gradient(white, rgb(249, 231, 235));  
 }
 
 /* Style the header */
@@ -31,31 +32,7 @@ h2{
     font-size: 50px;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-}
 
-nav li {
-    margin-right: 0px;
-}
-
-nav>ul>li>a{
-    padding: 20px;
-}
-
-nav>ul>li>a:hover{
-    background-color: #f4f4f4;
-    color: #702f8a;
-    border-radius: 50px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-}
-
-nav a {
-    text-decoration: none;
-    color: white;
-}
 
 /* Style sections */
 section {
@@ -100,42 +77,82 @@ li {
     justify-content: space-evenly;
     width: 100%;
     margin: 10px;
+    height: 20vh;
 }
 
 #WIE_logo{
     width: 60%;
     margin-right: 200px;
     margin-bottom: 0px;
+    height: 100%;
 }
 
 #AUI_logo{
-    width: 25%;
+    width: 20%;
     margin: 20px;
     margin-left: 50px;
+    height: 100%;
 }
 
 #WIE_morocco{
     width: 25%;
 }
 
-#WIE_morocco h4{
+#WIE_morocco div{
     color: #702f8a;
-    font-size: 50px;
+    font-size: 25px;
     margin: 0px;
-    margin-left: 10px;
+    margin-left: 30px;
 }
 
 #WIELS_logo{
     width: 30%;
     margin: 10px;
     justify-self: end;
+    height: 100%;
 }
 #navbar{
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+nav{
+    background-color: #702f8a;
+    border-radius: 5px;
+    padding: 0px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 50px;
-    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav li {
+    margin-inline: 30px;
+}
+
+nav>ul>li>a{
+    padding: 20px;
+    font-size: large;
+    width: 700;
+}
+
+nav>ul>li>a:hover{
+    background-color: #f4f4f4;
+    color: #702f8a;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
 }
 
 
@@ -153,12 +170,7 @@ form>input{
 
 
 
-nav{
-    background-color: #702f8a;
-    border-radius: 50px;
-    padding: 5px;
-    display: flex;
-}
+
 
 #WIE_logo{
     margin-right: 40px;
@@ -212,11 +224,12 @@ nav{
    justify-content: left;
    border-width: 3px;
    border-color: #333;
-   margin: 2px;
+   margin: 0px;
    padding: 0px;
-   font-size: large;
+   font-size: medium;
    transition: background-color 0.3s, color 0.3s;
    width: 80%; 
+   height: 20vh;
 }
 
 .hourly_program>li:hover .hourly_program>li>h5{
@@ -227,17 +240,17 @@ nav{
     background-color: #702f8a;
     background-image: linear-gradient(to right, #702f8a,#8af74a);
     color: #f4f4f4;
-    border-radius: 50px;
-    font-size: large;
+    border-radius: 8px;
+    font-size: medium;
     transition: background-color 0.3s, color 0.3s; 
 }
 
 @keyframes borderRadiusTransition {
     from {
-        border-radius: 10px; /* Start with 10px */
+        border-radius: 1px; /* Start with 10px */
     }
     to {
-        border-radius: 50px; /* End with 30px */
+        border-radius: 8px; /* End with 30px */
     }
 }
 
@@ -248,11 +261,12 @@ nav{
 
 
 .hourly_program>li>h5{
-    margin-right: 50px;
+    margin-right: 20px;
     background-color: #702f8a;
     color: #f4f4f4;
-    border-radius: 50px;
+    border-radius: 20px;
     padding: 20px;
+    width: 60px;
 }
 
 .day_program{
@@ -281,7 +295,7 @@ nav{
 }
 
 #registrationLinkContainer{
-    margin: 30px;
+    margin: 10px;
     padding: 30px;
 }
 
@@ -306,7 +320,7 @@ nav{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 100px;
+    margin-bottom: 30px;
 }
 
 #table_centered>table{
@@ -315,11 +329,11 @@ nav{
 #table_centered th{
     color: #f4f4f4;
     background-color: #702f8a;
-    padding: 30px;
+    padding: 20px;
     font-size: large;
 }
 #table_centered td{
-    padding: 20px;
+    padding: 10px;
     border: 1px black solid;
     margin: 0px;
 }
@@ -410,9 +424,7 @@ nav{
     justify-content: center;
 }
 
-body{
-    background-image: linear-gradient(white, rgb(249, 231, 235));  
-}
+
 
 .large_text{
     font-size: 50px;
@@ -441,6 +453,7 @@ footer {
     display: block;
     align-items: center;
     justify-content: center;
+    border-radius: 5px;
 }
 
 
@@ -486,6 +499,12 @@ footer {
 
 .speakerContainer img{
     width: 150px;
+}
+
+.speakerContainer div{
+    font-size: 10px;
+    margin: 0px;
+    padding: 0px;
 }
 
 .speakerContainer:hover img{
@@ -561,9 +580,7 @@ footer {
 }
 
 
-section:hover{
-    
-}
+
 
 
 
@@ -581,16 +598,33 @@ section:hover{
 
 /* Media queries for responsiveness */
 @media screen and (max-width: 768px) {
+
+    #banner{
+        height: auto;
+    }
+
+    #navbar{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    nav{
+        width: 50vw;
+        
+    }
+
     nav ul {
         flex-direction: column;
     }
     
     nav li {
         margin-right: 0;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
+        text-align: center;
     }
 
-    #WIE_morocco h4{
+    #WIE_morocco div{
         font-size: small;
     }
 
@@ -635,8 +669,8 @@ section:hover{
     }
 
     #clock{
-        margin: 30px;
-        font-size: 40px;
+        margin: 10px;
+        font-size: 20px;
     }
 
     #registrationLinkContainer{
