@@ -342,7 +342,7 @@ form>input{
     text-align: left;
     display: flex;
     align-items: center;
-    margin-bottom: 70px;
+    margin-bottom: 30px;
 }
 
 #auiDescription>img{
@@ -359,12 +359,12 @@ form>input{
 
 #auiLocation{
     text-align: center;
-    margin: 20px;
+    margin: 0px;
 }
 
 #auiLocation>img{
-    border-radius: 20px;
-    margin-right: 70px;
+    border-radius: 15px;
+    margin-right: 10px;
     height: 350px;
 }
 #auiLocation>a{
@@ -711,6 +711,7 @@ footer {
 
     #auiLocation iframe{
         width: 70vw;
+        margin: 0px;
     }
 
     .speakersList img{
