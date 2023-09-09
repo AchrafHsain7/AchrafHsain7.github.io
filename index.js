@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
     } ,1000)
 
+    /*
     var width = window.matchMedia("(max-width: 768px)");
 
     function handleWidthChange(event) {
@@ -42,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function(){
     
     // Call it initially as well
     handleWidthChange(width);
-        
+     */   
 
     //slideshow 
     let slides = document.querySelectorAll('.slide');
