@@ -130,10 +130,12 @@ nav{
 nav ul {
     list-style: none;
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 nav li {
-    margin-inline: 30px;
+    margin-inline: 0px;
 }
 
 nav>ul>li>a{
