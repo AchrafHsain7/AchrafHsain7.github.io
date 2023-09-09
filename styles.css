@@ -12,7 +12,7 @@ body {
     margin: 10px;
     padding: 10px;
     text-align: center;
-    background-image: linear-gradient(white, rgb(249, 231, 235));  
+    background-image: linear-gradient(249, 231, 235, rgb(249, 231, 235));  
 }
 
 /* Style the header */
@@ -215,7 +215,12 @@ form>input{
     font-size: large;
     margin: 10px;
     color: #333;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+}
+
+#programContainer{
+    display: flex;
+    padding: 0px;
 }
 
 .hourly_program>li{
@@ -226,6 +231,7 @@ form>input{
    border-color: #333;
    margin: 0px;
    padding: 0px;
+   margin-left: 20px;
    font-size: medium;
    transition: background-color 0.3s, color 0.3s;
    width: 80%; 
@@ -270,9 +276,10 @@ form>input{
 }
 
 .day_program{
-    display: flex;
+    display: block;
     align-items: center;
     justify-content: center;
+    border: 1px solid #702f8a;
 }
 
 .day_program>div>img{
@@ -284,6 +291,11 @@ form>input{
 
 .day_program h3{
     font-size: 50px;
+    border: 1px #702f8a solid;
+    padding: 0px;
+    margin: 0px;
+    background-color: #702f8a;
+    color: #f4f4f4;
 }
 #registration{
     text-align: center;
@@ -343,6 +355,10 @@ form>input{
     display: flex;
     align-items: center;
     margin-bottom: 30px;
+}
+
+#aui h2{
+    margin: 0px;
 }
 
 #auiDescription>img{
@@ -628,11 +644,22 @@ footer {
         font-size: small;
     }
 
+    #programContainer{
+        display: block;
+    }
+
     .day_program{
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
+        border: none;
+    }
+
+    .day_program h3{
+        border: none;
+        color: #1d212b;
+        background-color: white;
     }
 
     .hourly_program{
