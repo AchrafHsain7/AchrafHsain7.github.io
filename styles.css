@@ -450,6 +450,10 @@ section:hover{
       ) 1 100%;
 }
 
+#intro:hover{
+    border-width: 0;
+}
+
 
 
 /* Style footer */
