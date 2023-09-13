@@ -76,8 +76,8 @@ li {
     align-items: center;
     justify-content: space-evenly;
     width: 100%;
-    margin: 10px;
-    height: 20vh;
+    margin: 0px;
+    height: 25vh;
 }
 
 #WIE_logo{
@@ -178,19 +178,7 @@ form>input{
     margin-right: 40px;
 }
 
-#intro{
-    background-image: linear-gradient(to right,#702f8a, #8af74a);
-    color: #f4f4f4;
-    font-size: medium;
-    border-radius: 10px;
-    padding: 0px;
-    text-align: center;
-}
 
-#intro>img{
-    width: 100%;
-    border-radius: 10px;
-}
 #externalLinks>a{
     
     text-decoration: none;
@@ -538,7 +526,25 @@ footer {
 }
 
 
+#intro{
+    background-image: linear-gradient(to right,#702f8a, #8af74a);
+    color: #f4f4f4;
+    font-size: medium;
+    border-radius: 10px;
+    padding: 0px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 85%;
+    margin-left: 7.5%;
+}
 
+#intro>img{
+    width: 100%;
+    border-radius: 10px;
+}
 
 
 .img-slider{
@@ -548,6 +554,7 @@ footer {
     background-color: #1d212b;
     overflow: hidden;
     margin-bottom: 50px;
+    margin-top: 0px;
     border-radius: 10px;
 }
 
