@@ -167,7 +167,7 @@ form>input{
 }
 
 #teamMembers>li>img{
-    border-radius: 50px;
+    border-radius: 50%;
 }
 
 
@@ -383,19 +383,20 @@ form>input{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 40px;
+    margin: 0px;
     flex-direction: row;
 }
 
 .teamRow>div{
-    margin: 40px;
+    margin: 20px;
+    margin-right: 50px;
 }
 
 
 #teamMembers img{
-    width: 200px;
-    border-radius: 100px;
-    height: 200px;
+    width: 150px;
+    border-radius: 50%;
+    height: 150px;
     object-fit: cover;
 }
 
@@ -406,7 +407,7 @@ form>input{
 
 #teamMembers>div>div>a:hover img{
     transform: scale(1.2);
-    border-radius: 70px;
+    border-radius: 50px;
 }
 
 #contactContainer{
@@ -422,7 +423,7 @@ form>input{
 }
 
 .speakersList img{
-    width: 150px;
+    width: 200px;
     border-radius: 75px;
 }
 
@@ -501,7 +502,7 @@ footer {
 .speakerContainer{
     margin: 30px;
     width: 200px;
-    border-radius: 100px;
+    border-radius: 50%;
 }
 
 .speakerContainer a{
@@ -510,7 +511,8 @@ footer {
 }
 
 .speakerContainer img{
-    width: 150px;
+    width: 175px;
+    border-radius: 50%;
 }
 
 .speakerContainer div{
