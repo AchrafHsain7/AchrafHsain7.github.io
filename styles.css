@@ -761,7 +761,8 @@ footer {
 
     .speakersList img{
         width: 150px;
-        border-radius: 75px;
+        height: 150px;
+        border-radius: 50%;
     }
     
     .speakersList{
