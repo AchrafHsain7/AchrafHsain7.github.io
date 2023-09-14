@@ -512,6 +512,7 @@ footer {
 
 .speakerContainer img{
     width: 175px;
+    height: 175px;
     border-radius: 50%;
 }
 
