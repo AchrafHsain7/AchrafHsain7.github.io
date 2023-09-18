@@ -211,6 +211,7 @@ form>input{
 #programContainer{
     display: flex;
     padding: 0px;
+    flex-direction: column;
 }
 
 .hourly_program>li{
@@ -224,7 +225,7 @@ form>input{
    margin-left: 20px;
    font-size: medium;
    transition: background-color 0.3s, color 0.3s;
-   width: 80%; 
+   width: 90%; 
    height: 18vh;
 }
 
@@ -266,10 +267,39 @@ form>input{
 }
 
 .day_program{
-    display: block;
+    display: flex;
     align-items: center;
     justify-content: center;
     border: 1px solid #702f8a;
+    margin-bottom: 50px;
+    border-radius: 4px;
+}
+
+.day1_container{
+    width: 50%;
+    border: 1px #702f8a solid;
+    border-radius: 4px;
+}
+
+#day2_container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#day2_container ul{
+    width: 100%;
+}
+
+#day2_container h5{
+    width: 120px;
+}
+
+.programSpeakerContainer{
+    font-size: small;
+    margin: 0px;
+    padding: 0px;
 }
 
 .day_program>div>img{
@@ -279,11 +309,11 @@ form>input{
     margin:30px;
 }
 
-.day_program h3{
+#programContainer h3{
     font-size: 50px;
     border: 1px #702f8a solid;
     padding: 0px;
-    margin: 0px;
+    margin: 1px;
     background-color: #702f8a;
     color: #f4f4f4;
 }
@@ -704,7 +734,7 @@ footer {
         border: none;
     }
 
-    .day_program h3{
+    #programContainer h3{
         border: none;
         color: #1d212b;
         background-color: white;
@@ -718,6 +748,27 @@ footer {
     #program{
         margin: 0px;
         padding: 0px;
+    }
+
+    .day1_container{
+        width: 90%;
+        border: none;
+    }
+
+    #day2_container{
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0px;
+    }
+    
+
+
+    .hourly_program li{
+        height: 20vh;
+        margin: 10px;
+        width: 100%;
     }
 
     .hourly_program>li>h5{
@@ -741,7 +792,6 @@ footer {
         border-radius: 5px;
         font-size: small;
         transition: background-color 0.3s, color 0.3s; 
-        padding-right: 40px;
     }
 
     #clock{
@@ -859,4 +909,5 @@ footer {
         height: 100%;
     }
 
+   
 }
