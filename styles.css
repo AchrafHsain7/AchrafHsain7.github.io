@@ -342,7 +342,7 @@ form>input{
 }
 
 .registrationLink:hover{
-    background-image: linear-gradient(to right, #702f8a,#8af74a);
+    background-color: #8af74a;
 }
 
 .registrationLink a{
