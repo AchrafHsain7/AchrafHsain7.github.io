@@ -12,7 +12,7 @@ function mobileResponsive(matches) {
 
 document.addEventListener('DOMContentLoaded', function(){
 
-    const eventDate = new Date('November 15, 2023 00:00:00').getTime();
+    const eventDate = new Date('November 16, 2023 00:00:00').getTime();
 
     let x = setInterval(() =>{
 

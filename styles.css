@@ -288,6 +288,40 @@ form>input{
     align-items: center;
 }
 
+@keyframes borderRadiusHackhathon {
+    from {
+        border-radius: 1px; /* Start with 10px */
+    }
+    to {
+        border-radius: 4px; /* End with 30px */
+    }
+}
+
+#hackhathon{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#hackhathon div{
+    margin: 20px;
+}
+
+#hackhathonTopic{
+    font-size: 30px;
+}
+
+#hackhathon:hover{
+    background-image: linear-gradient(to right, #702f8a,#8af74a);
+    color: #f4f4f4;
+    animation: borderRadiusHackhathon 0.5s ease;
+    border-radius: 4px;
+}
+
+
+
 #day2_container ul{
     width: 100%;
 }
@@ -699,6 +733,7 @@ footer {
 
 
 
+
 /* Media queries for responsiveness */
 @media screen and (max-width: 500px) {
 
@@ -771,6 +806,9 @@ footer {
         align-items: center;
         margin: 0px;
     }
+
+    
+    
     
 
 
