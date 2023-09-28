@@ -1,26 +1,71 @@
-div{
+body{
+    margin: 10px;
+    padding: 10px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
     flex-direction: column;
 }
 
-div h1{
-    font-size: 60px;
-    color: #2832c2;
+section{
+    margin: 10px;
+    padding: 5px;
+    background-color: #0B666A;
 }
 
-div h6{
-    font-size: 20px;
-    color: #454545;
+
+header{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    background-color: #071952;
+    color: #FFFAFA;
+    border-radius: 7px;
 }
 
-ul{
-    list-style-type: none;
+header #personal_intro{
+    margin: 10px;
 }
 
-a{
-    text-decoration: none;
-    color: #2832c2;
+nav{
+    width: 40vw;
+    position: relative;
+}
+
+nav div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+
+nav button{
+    margin: 5px;
+    background-color: transparent;
+    color: #FFFAFA;
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+    width: 150px;
+}
+
+nav button:hover{
+    background-color: #FFFAFA;
+    color: #071952;
+}
+
+#about_me div{
+    margin: 10px;
+    color: #FFFAFA;
+}
+
+
+
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #071952;
+    color: #FFFAFA;
+    border-radius: 7px;
 }
