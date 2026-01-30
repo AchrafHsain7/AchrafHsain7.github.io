@@ -3,17 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Achraf Hsain - PhD Student and Machine Learning Researcher. Personal academic portfolio showcasing research, publications, and projects.">
-  <meta name="keywords" content="Achraf Hsain, Machine Learning, AI, Reinforcement Learning, PhD, Research, Computer Science">
+  <meta name="description" content="About Achraf Hsain - PhD Student and Machine Learning Researcher. Learn about my research interests, background, and experience.">
   <meta name="author" content="Achraf Hsain">
   
-  <!-- Open Graph -->
-  <meta property="og:title" content="Achraf Hsain - Academic Portfolio">
-  <meta property="og:description" content="PhD Student and Machine Learning Researcher">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://AchrafHsain7.github.io/">
-  
-  <title>Achraf Hsain - Academic Portfolio</title>
+  <title>About - Achraf Hsain</title>
   
   <!-- Favicon -->
   <link rel="icon" href="assets/images/favicon.png" type="image/png">
@@ -34,7 +27,6 @@
   
   <!-- Scripts -->
   <script src="scripts/main.js" defer></script>
-  <script src="scripts/particles.js" defer></script>
   <script src="scripts/scroll-reveal.js" defer></script>
 </head>
 <body>
@@ -105,147 +97,112 @@
     </div>
 
     <main>
-      <!-- Hero Section -->
-      <section class="section section--hero">
-        <canvas id="hero-particles" class="hero__canvas"></canvas>
-        <div class="hero animate-fade-in-up">
-          <h1 class="hero__name">Achraf Hsain</h1>
-          <p class="hero__title">PhD Student · Machine Learning Researcher</p>
-          <p class="hero__tagline">Exploring the intersection of reinforcement learning, attention mechanisms, and robotics to build intelligent systems that learn and adapt.</p>
-        </div>
-        <div class="hero__scroll">
-          <span>Scroll</span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="6 9 12 15 18 9"></polyline>
-          </svg>
-        </div>
-      </section>
+      <!-- Page Header -->
+      <div class="container">
+        <header class="page-header animate-fade-in-up">
+          <h1 class="page-title">About</h1>
+        </header>
+      </div>
 
-      <!-- Introduction Section -->
+      <!-- About Section -->
       <section class="section">
         <div class="container">
-          <div class="prose reveal">
-            <h2 class="section-title">Hello, World</h2>
-            <p class="lead">I'm a PhD student passionate about pushing the boundaries of machine learning and artificial intelligence. My research focuses on developing novel approaches to reinforcement learning and understanding how attention mechanisms can improve learning efficiency in complex environments.</p>
-            <p>When I'm not training models or debugging code, you'll find me exploring new ideas at the intersection of theory and practice, always seeking elegant solutions to challenging problems. I believe in open science and sharing knowledge with the community.</p>
-            <a href="about.html" class="link link-animated">Read more about me →</a>
+          <div class="two-column">
+            <aside class="two-column__sidebar reveal">
+              <img src="assets/images/profile-placeholder.jpg" alt="Achraf Hsain" class="profile-image">
+            </aside>
+            
+            <div class="two-column__content prose reveal">
+              <p class="lead">I'm a PhD student at [University Name] working with Professor [Advisor Name] in the [Lab Name]. My research lies at the intersection of reinforcement learning, deep learning, and robotics.</p>
+              
+              <p>My work focuses on developing more efficient and generalizable learning algorithms that can enable robots and autonomous agents to learn complex behaviors from limited experience. I'm particularly interested in how attention mechanisms can be leveraged to improve the sample efficiency and transfer capabilities of reinforcement learning agents.</p>
+              
+              <p>Before starting my PhD, I completed my Master's degree in Computer Science at [Previous University], where I first became fascinated with the potential of machine learning to solve real-world problems. During my undergraduate studies, I worked on several projects involving natural language processing and computer vision.</p>
+              
+              <p>Beyond research, I'm passionate about making machine learning more accessible through teaching and open-source contributions. I regularly contribute to popular ML libraries and maintain several educational resources for students learning about AI.</p>
+              
+              <p>When I'm not in the lab, you can find me hiking in the mountains, playing chess, or exploring new coffee shops around the city.</p>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- Featured Work Section -->
+      <!-- Research Interests Section -->
       <section class="section" style="background-color: var(--bg-secondary);">
         <div class="container">
-          <h2 class="section-title reveal">Featured Work</h2>
-          
-          <!-- Featured Papers -->
-          <h3 class="section-subtitle reveal">Recent Publications</h3>
-          <div class="stack--xl reveal-stagger mb-12">
-            <!-- Paper Card 1 -->
-            <article class="card paper-card reveal">
-              <img src="assets/images/papers/paper-placeholder.png" alt="Paper figure showing attention mechanism visualization" class="paper-card__image" loading="lazy">
-              <div class="paper-card__content">
-                <h4 class="paper-card__title">Attention Mechanisms in Deep Reinforcement Learning</h4>
-                <p class="paper-card__authors">Achraf Hsain, Jane Collaborator, John Advisor</p>
-                <p class="paper-card__venue">NeurIPS 2024</p>
-                <p class="paper-card__abstract">We introduce a novel attention-based architecture for deep reinforcement learning that significantly improves sample efficiency and generalization across diverse environments. Our method achieves state-of-the-art results on multiple benchmark tasks.</p>
-                <div class="paper-card__tags tags">
-                  <span class="tag">reinforcement-learning</span>
-                  <span class="tag">attention</span>
-                  <span class="tag">deep-learning</span>
-                </div>
-                <div class="paper-card__actions">
-                  <a href="#" class="btn btn--ghost btn--sm">arXiv</a>
-                  <a href="#" class="btn btn--ghost btn--sm">PDF</a>
-                  <a href="#" class="btn btn--ghost btn--sm">Code</a>
-                  <button class="btn btn--ghost btn--sm" data-bibtex="@inproceedings{hsain2024attention, title={Attention Mechanisms in Deep Reinforcement Learning}, author={Hsain, Achraf}, booktitle={NeurIPS}, year={2024}}">BibTeX</button>
-                </div>
-              </div>
-            </article>
-            
-            <!-- Paper Card 2 -->
-            <article class="card paper-card reveal">
-              <img src="assets/images/papers/paper-placeholder.png" alt="Paper figure showing robot arm learning" class="paper-card__image" loading="lazy">
-              <div class="paper-card__content">
-                <h4 class="paper-card__title">Efficient Policy Gradient Methods for Robotics</h4>
-                <p class="paper-card__authors">Achraf Hsain, Bob Roboticist</p>
-                <p class="paper-card__venue">ICRA 2024</p>
-                <p class="paper-card__abstract">We present a family of policy gradient algorithms optimized for robotic control tasks, featuring improved variance reduction techniques and adaptive learning rate schedules. Demonstrated on manipulation and locomotion tasks.</p>
-                <div class="paper-card__tags tags">
-                  <span class="tag">robotics</span>
-                  <span class="tag">policy-gradient</span>
-                  <span class="tag">control</span>
-                </div>
-                <div class="paper-card__actions">
-                  <a href="#" class="btn btn--ghost btn--sm">arXiv</a>
-                  <a href="#" class="btn btn--ghost btn--sm">PDF</a>
-                  <a href="#" class="btn btn--ghost btn--sm">Code</a>
-                  <button class="btn btn--ghost btn--sm" data-bibtex="@inproceedings{hsain2024policy, title={Efficient Policy Gradient Methods for Robotics}, author={Hsain, Achraf}, booktitle={ICRA}, year={2024}}">BibTeX</button>
-                </div>
-              </div>
-            </article>
+          <h2 class="section-title reveal">Research Interests</h2>
+          <div class="interests-grid reveal">
+            <div class="interest-item">
+              <span>🤖</span>
+              Reinforcement Learning
+            </div>
+            <div class="interest-item">
+              <span>🔍</span>
+              Attention Mechanisms
+            </div>
+            <div class="interest-item">
+              <span>🦾</span>
+              Robot Learning
+            </div>
+            <div class="interest-item">
+              <span>📊</span>
+              Sample Efficient Learning
+            </div>
+            <div class="interest-item">
+              <span>🔄</span>
+              Transfer Learning
+            </div>
+            <div class="interest-item">
+              <span>🎮</span>
+              Multi-Agent Systems
+            </div>
+            <div class="interest-item">
+              <span>🧮</span>
+              Optimization
+            </div>
+            <div class="interest-item">
+              <span>🧠</span>
+              Neural Architecture Design
+            </div>
           </div>
-          
-          <div class="mb-12">
-            <a href="papers.html" class="link link-animated">View all publications →</a>
-          </div>
-          
-          <!-- Featured Projects -->
-          <h3 class="section-subtitle reveal">Projects</h3>
-          <div class="grid grid--2cols reveal-stagger">
-            <!-- Project Card 1 -->
-            <article class="card project-card reveal">
-              <img src="assets/images/projects/project-placeholder.png" alt="RL-Gym-Toolkit screenshot" class="project-card__image" loading="lazy">
-              <h4 class="project-card__title">RL-Gym-Toolkit</h4>
-              <p class="project-card__description">A comprehensive collection of custom OpenAI Gym environments designed for reinforcement learning research. Includes challenging navigation, manipulation, and multi-agent scenarios.</p>
-              <div class="project-card__tags tags">
-                <span class="tag">python</span>
-                <span class="tag">reinforcement-learning</span>
-                <span class="tag">gym</span>
-              </div>
-              <div class="project-card__actions">
-                <a href="#" class="btn btn--ghost btn--sm">Demo</a>
-                <a href="#" class="btn btn--ghost btn--sm">GitHub</a>
-              </div>
-            </article>
-            
-            <!-- Project Card 2 -->
-            <article class="card project-card reveal">
-              <img src="assets/images/projects/project-placeholder.png" alt="Attention-Viz screenshot" class="project-card__image" loading="lazy">
-              <h4 class="project-card__title">Attention-Viz</h4>
-              <p class="project-card__description">An interactive visualization tool for exploring and understanding attention patterns in transformer and attention-based neural networks. Supports multiple architectures.</p>
-              <div class="project-card__tags tags">
-                <span class="tag">visualization</span>
-                <span class="tag">transformers</span>
-                <span class="tag">javascript</span>
-              </div>
-              <div class="project-card__actions">
-                <a href="#" class="btn btn--ghost btn--sm">Demo</a>
-                <a href="#" class="btn btn--ghost btn--sm">GitHub</a>
-              </div>
-            </article>
-          </div>
-          
-          <div class="mt-8">
-            <a href="projects.html" class="link link-animated">View all projects →</a>
+        </div>
+      </section>
+
+      <!-- Education Section -->
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title reveal">Education</h2>
+          <div class="education-list reveal">
+            <div class="education-item">
+              <p class="education-item__degree">Ph.D. in Computer Science</p>
+              <p class="education-item__institution">[University Name] — Advisor: Prof. [Advisor Name]</p>
+              <p class="education-item__year">2022 – Present</p>
+            </div>
+            <div class="education-item">
+              <p class="education-item__degree">M.Sc. in Computer Science</p>
+              <p class="education-item__institution">[Previous University]</p>
+              <p class="education-item__year">2020 – 2022</p>
+            </div>
+            <div class="education-item">
+              <p class="education-item__degree">B.Sc. in Computer Engineering</p>
+              <p class="education-item__institution">[Undergraduate University]</p>
+              <p class="education-item__year">2016 – 2020</p>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- Contact Section -->
-      <section class="section">
-        <div class="container text-center">
-          <h2 class="section-title reveal">Get in Touch</h2>
-          <p class="text-secondary mb-8 reveal">Feel free to reach out for collaborations, questions, or just to say hello!</p>
+      <section class="section" style="background-color: var(--bg-secondary);">
+        <div class="container">
+          <h2 class="section-title reveal">Contact</h2>
+          <div class="prose reveal">
+            <p><strong>Email:</strong> <a href="mailto:achraf@example.com" class="link link-animated">achraf@example.com</a></p>
+            <p><strong>Office:</strong> [Building Name], Room [Number]</p>
+            <p><strong>Address:</strong> [University Address]</p>
+          </div>
           
-          <div class="contact-links reveal">
-            <a href="mailto:achraf@example.com" class="contact-link">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                <polyline points="22,6 12,13 2,6"></polyline>
-              </svg>
-              Email
-            </a>
+          <div class="contact-links mt-8 reveal" style="justify-content: flex-start;">
             <a href="https://github.com/AchrafHsain7" target="_blank" rel="noopener noreferrer" class="contact-link">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
@@ -256,7 +213,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/>
               </svg>
-              Scholar
+              Google Scholar
             </a>
             <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" class="contact-link">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
