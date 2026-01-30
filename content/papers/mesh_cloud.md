@@ -9,7 +9,7 @@ authors:
 
 venue: "arXiv"
 year: 2024
-date: "2024-14-12"
+date: "2024-12-14"
 image: "assets/images/PC3D.png"
 arxiv: "https://arxiv.org/abs/2412.10977"
 tags:

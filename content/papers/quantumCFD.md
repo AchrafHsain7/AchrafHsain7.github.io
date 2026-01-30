@@ -7,7 +7,7 @@ authors:
 
 venue: "arXiv"
 year: 2025
-date: "2025-27-12"
+date: "2025-12-27"
 image: "assets/images/QMLCFD.png"
 arxiv: "https://arxiv.org/abs/2512.22672"
 tags:

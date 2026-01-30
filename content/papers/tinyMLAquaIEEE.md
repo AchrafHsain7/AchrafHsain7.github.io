@@ -10,7 +10,7 @@ authors:
 
 venue: "2024 IEEE Global Conference on Artificial Intelligence and Internet of Things (GCAIoT)"
 year: 2024
-date: "2024-19-11"
+date: "2024-11-19"
 image: "assets/images/TinyAquapoIEEE.png"
 arxiv: "https://ieeexplore.ieee.org/abstract/document/10833526"
 tags:

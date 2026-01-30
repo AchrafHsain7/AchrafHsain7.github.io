@@ -7,7 +7,7 @@ authors:
 
 venue: "The Internationalization of Higher Education and Digital Transformation: Addressing Current and Future Possibilities in Oujda, Morocco"
 year: 2024
-date: "2024-16-03"
+date: "2024-03-16"
 image: "assets/images/LLMChatbot.svg"
 arxiv: "https://arxiv.org/abs/2403.14702"
 tags:
