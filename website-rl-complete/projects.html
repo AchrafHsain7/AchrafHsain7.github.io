@@ -39,10 +39,8 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Curriculum Vitae of Achraf Hsain - PhD Student and Machine Learning Researcher.">
+  <meta name="description" content="Projects by Achraf Hsain - Open source tools, research implementations, and side projects.">
   <meta name="author" content="Achraf Hsain">
-  
-  <title>CV - Achraf Hsain</title>
   
   <!-- Favicon -->
   <link rel="icon" href="assets/images/favicon.png" type="image/png">
@@ -65,71 +63,11 @@
   <script src="scripts/main.js?v=6" defer></script>
   <script src="scripts/scroll-reveal.js?v=6" defer></script>
   <script src="scripts/page-backgrounds.js?v=7" defer></script>
-  
-  <style>
-    .cv-embed {
-      width: 100%;
-      height: 80vh;
-      min-height: 600px;
-      border: 1px solid var(--border-primary);
-      border-radius: var(--radius-lg);
-      background: var(--bg-secondary);
-    }
-    
-    .cv-fallback {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 400px;
-      text-align: center;
-      padding: var(--space-8);
-      background: var(--bg-secondary);
-      border: 1px solid var(--border-primary);
-      border-radius: var(--radius-lg);
-    }
-    
-    .cv-fallback__icon {
-      width: 64px;
-      height: 64px;
-      margin-bottom: var(--space-6);
-      color: var(--text-tertiary);
-    }
-    
-    .cv-fallback__text {
-      color: var(--text-secondary);
-      margin-bottom: var(--space-6);
-    }
-    
-    .cv-actions {
-      display: flex;
-      gap: var(--space-4);
-      margin-bottom: var(--space-8);
-      flex-wrap: wrap;
-    }
-    
-    @media (max-width: 640px) {
-      .cv-embed {
-        height: 60vh;
-        min-height: 400px;
-      }
-      
-      .cv-actions {
-        flex-direction: column;
-        width: 100%;
-      }
-      
-      .cv-actions .btn {
-        width: 100%;
-        justify-content: center;
-      }
-    }
-  </style>
 </head>
 <body>
   <div class="site-wrapper">
     <!-- Page Background Animation -->
-    <canvas id="page-background" class="page-bg-canvas" data-theme="trajectory"></canvas>
+    <canvas id="page-background" class="page-bg-canvas" data-theme="agent"></canvas>
     
     <!-- Navigation -->
     <nav class="nav">
@@ -201,66 +139,25 @@
       <!-- Page Header -->
       <section class="page-header">
         <div class="container">
-          <h1 class="page-title reveal">Curriculum Vitae</h1>
-          <p class="text-secondary reveal">My academic and professional trajectory — gradient ascent toward θ*</p>
-          <div class="formula-display reveal" style="margin-top: var(--space-4);">career(t+1) = career(t) + α·∇growth</div>
+          <h1 class="page-title reveal">Projects</h1>
+          <p class="text-secondary reveal">Open source tools, research implementations, and side projects</p>
+          <div class="agent-status reveal" style="margin-top: var(--space-4);">Agent Status: Building Environments</div>
         </div>
       </section>
 
-      <!-- CV Section -->
+      <!-- Projects Grid -->
       <section class="section">
         <div class="container">
-          <!-- Download Actions -->
-          <div class="cv-actions reveal">
-            <a href="assets/files/cv-placeholder.pdf" download class="btn btn--primary">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
-              Download PDF
-            </a>
-            <a href="assets/files/cv-placeholder.pdf" target="_blank" rel="noopener noreferrer" class="btn btn--ghost">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                <polyline points="15 3 21 3 21 9"></polyline>
-                <line x1="10" y1="14" x2="21" y2="3"></line>
-              </svg>
-              Open in New Tab
-            </a>
-          </div>
-          
-          <!-- PDF Embed -->
-          <div class="reveal">
-            <object 
-              data="assets/files/cv-placeholder.pdf" 
-              type="application/pdf" 
-              class="cv-embed"
-              aria-label="CV PDF viewer"
-            >
-              <!-- Fallback for browsers that don't support PDF embedding -->
-              <div class="cv-fallback">
-                <svg class="cv-fallback__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                  <polyline points="14 2 14 8 20 8"></polyline>
-                  <line x1="16" y1="13" x2="8" y2="13"></line>
-                  <line x1="16" y1="17" x2="8" y2="17"></line>
-                  <polyline points="10 9 9 9 8 9"></polyline>
-                </svg>
-                <p class="cv-fallback__text">
-                  Your browser doesn't support embedded PDFs.<br>
-                  Please download the CV to view it.
-                </p>
-                <a href="assets/files/cv-placeholder.pdf" download class="btn btn--primary">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                    <polyline points="7 10 12 15 17 10"></polyline>
-                    <line x1="12" y1="15" x2="12" y2="3"></line>
-                  </svg>
-                  Download PDF
-                </a>
-              </div>
-            </object>
+          <div class="projects-grid">
+            
+            <article class="card project-card reveal">
+              <div class="project-card__badge">Featured</div>
+              <img src="assets/images/project-placeholder.png" alt="RL-Gym-Toolkit screenshot" class="project-card__image" loading="lazy">
+              <h3 class="project-card__title">RL-Gym-Toolkit</h3>
+              <p class="project-card__description">A comprehensive collection of custom OpenAI Gym environments designed for reinforcement learning research. Includes challenging navigation, manipulation, and multi-agent scenarios with configurable difficulty levels.</p>
+              <div class="project-card__tags tags"><span class="tag">python</span><span class="tag">reinforcement-learning</span><span class="tag">gym</span></div>
+              <div class="project-card__actions"><a href="https://demo.example.com" class="btn btn--ghost btn--sm" target="_blank" rel="noopener noreferrer">Demo</a><a href="https://github.com/achrafhsain/rl-gym-toolkit" class="btn btn--ghost btn--sm" target="_blank" rel="noopener noreferrer">GitHub</a></div>
+            </article>
           </div>
         </div>
       </section>

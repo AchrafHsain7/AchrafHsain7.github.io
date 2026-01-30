@@ -39,10 +39,17 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="About Achraf Hsain - PhD Student and Machine Learning Researcher. Learn about my research interests, background, and experience.">
+  <meta name="description" content="Achraf Hsain - PhD Student and Machine Learning Researcher. Personal academic portfolio showcasing research, publications, and projects.">
+  <meta name="keywords" content="Achraf Hsain, Machine Learning, AI, Reinforcement Learning, PhD, Research, Computer Science">
   <meta name="author" content="Achraf Hsain">
   
-  <title>About - Achraf Hsain</title>
+  <!-- Open Graph -->
+  <meta property="og:title" content="Achraf Hsain - Academic Portfolio">
+  <meta property="og:description" content="PhD Student and Machine Learning Researcher">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://AchrafHsain7.github.io/">
+  
+  <title>Achraf Hsain - Academic Portfolio</title>
   
   <!-- Favicon -->
   <link rel="icon" href="assets/images/favicon.png" type="image/png">
@@ -63,14 +70,12 @@
   
   <!-- Scripts -->
   <script src="scripts/main.js?v=6" defer></script>
+  <script src="scripts/particles.js?v=6" defer></script>
   <script src="scripts/scroll-reveal.js?v=6" defer></script>
-  <script src="scripts/page-backgrounds.js?v=7" defer></script>
+  <script src="scripts/typing.js?v=6" defer></script>
 </head>
 <body>
   <div class="site-wrapper">
-    <!-- Page Background Animation -->
-    <canvas id="page-background" class="page-bg-canvas" data-theme="entropy"></canvas>
-    
     <!-- Navigation -->
     <nav class="nav">
       <div class="nav__container">
@@ -137,126 +142,120 @@
     </div>
 
     <main>
-      <!-- Page Header -->
-      <div class="container">
-        <header class="page-header animate-fade-in-up">
-          <h1 class="page-title">About</h1>
-          <p class="page-subtitle formula-display" style="margin-top: var(--space-4);">H(me) → 0 as you read on</p>
-        </header>
-      </div>
+      <!-- Hero Section -->
+      <section class="section section--hero">
+        <canvas id="hero-particles" class="hero__canvas"></canvas>
+        <div class="hero">
+          <h1 class="hero__name"></h1>
+          <p class="hero__title"></p>
+          <p class="hero__tagline animate-fade-in-up animate-delay-6">Navigating the state space of intelligence — from reward signals to optimal policies. Building agents that learn, adapt, and discover.</p>
+          <div class="hero__formula animate-fade-in-up animate-delay-6">
+            <span class="formula-display">π*(s) = argmax<sub>a</sub> Q*(s,a)</span>
+          </div>
+        </div>
+        <div class="hero__scroll">
+          <span>Scroll</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </div>
+      </section>
 
-      <!-- About Section -->
+      <!-- Introduction Section -->
       <section class="section">
         <div class="container">
-          <div class="two-column">
-            <aside class="two-column__sidebar reveal">
-              <img src="assets/images/profile-placeholder.jpg" alt="Achraf Hsain" class="profile-image">
-            </aside>
-            
-            <div class="two-column__content prose reveal">
-              <p class="lead">I'm a PhD student at [University Name] working with Professor [Advisor Name] in the [Lab Name]. My research lies at the intersection of reinforcement learning, deep learning, and robotics.</p>
-              
-              <p>My work focuses on developing more efficient and generalizable learning algorithms that can enable robots and autonomous agents to learn complex behaviors from limited experience. I'm particularly interested in how attention mechanisms can be leveraged to improve the sample efficiency and transfer capabilities of reinforcement learning agents.</p>
-              
-              <p>Before starting my PhD, I completed my Master's degree in Computer Science at [Previous University], where I first became fascinated with the potential of machine learning to solve real-world problems. During my undergraduate studies, I worked on several projects involving natural language processing and computer vision.</p>
-              
-              <p>Beyond research, I'm passionate about making machine learning more accessible through teaching and open-source contributions. I regularly contribute to popular ML libraries and maintain several educational resources for students learning about AI.</p>
-              
-              <p>When I'm not in the lab, you can find me hiking in the mountains, playing chess, or exploring new coffee shops around the city.</p>
-            </div>
+          <div class="prose reveal">
+            <h2 class="section-title">Hello, World</h2>
+            <p class="lead">I'm a PhD student exploring the mathematical foundations of intelligent decision-making. My research spans <span class="math-accent">reinforcement learning</span>, information theory, and optimization — seeking principled approaches to building agents that learn effectively from experience.</p>
+            <p>From Bellman equations to policy gradients, I'm fascinated by how mathematical elegance translates into practical algorithms. When I'm not deriving bounds or debugging reward signals, you'll find me exploring the intersection of theory and practice.</p>
+            <div class="agent-status">Agent Status: Learning</div>
+            <a href="about.html" class="link link-animated">Read more about me →</a>
           </div>
         </div>
       </section>
 
-      <!-- Research Interests Section -->
-      <section class="section state-space-bg" style="background-color: var(--bg-secondary);">
+      <!-- Featured Work Section -->
+      <section class="section section--featured">
         <div class="container">
-          <h2 class="section-title reveal">Research Interests</h2>
-          <p class="text-secondary mb-6 reveal" style="max-width: 600px;">Exploring the state space of machine learning — maximizing expected knowledge.</p>
+          <h2 class="section-title reveal">Featured Work</h2>
           
-          <!-- Probability Distribution Visualization -->
-          <div class="prob-distribution reveal mb-8" style="max-width: 300px;">
-            <div class="prob-distribution__bar" style="height: 85%;"></div>
-            <div class="prob-distribution__bar" style="height: 60%;"></div>
-            <div class="prob-distribution__bar" style="height: 95%;"></div>
-            <div class="prob-distribution__bar" style="height: 45%;"></div>
-            <div class="prob-distribution__bar" style="height: 70%;"></div>
-            <div class="prob-distribution__bar" style="height: 35%;"></div>
-            <div class="prob-distribution__bar" style="height: 55%;"></div>
+          <!-- Mini trajectory visualization -->
+          <div class="trajectory reveal mb-8" style="max-width: 400px;">
+            <div class="trajectory__point">
+              <span class="text-sm text-secondary">Research Direction</span>
+            </div>
+            <div class="trajectory__point trajectory__point--reward">
+              <span class="text-sm text-secondary">Publication</span>
+            </div>
+            <div class="trajectory__point trajectory__point--terminal">
+              <span class="text-sm text-secondary">Impact</span>
+            </div>
           </div>
           
-          <div class="interests-grid reveal">
-            <div class="interest-item" data-formula="π(a|s)">
-              <span>🤖</span>
-              Reinforcement Learning
-            </div>
-            <div class="interest-item" data-formula="α_ij = softmax(QK^T)">
-              <span>🔍</span>
-              Attention Mechanisms
-            </div>
-            <div class="interest-item">
-              <span>🦾</span>
-              Robot Learning
-            </div>
-            <div class="interest-item">
-              <span>📊</span>
-              Sample Efficient Learning
-            </div>
-            <div class="interest-item">
-              <span>🔄</span>
-              Transfer Learning
-            </div>
-            <div class="interest-item">
-              <span>🎮</span>
-              Multi-Agent Systems
-            </div>
-            <div class="interest-item">
-              <span>🧮</span>
-              Optimization
-            </div>
-            <div class="interest-item">
-              <span>🧠</span>
-              Neural Architecture Design
-            </div>
+          <!-- Featured Papers -->
+          <h3 class="section-subtitle reveal">Recent Publications</h3>
+          <div class="stack--xl reveal-stagger mb-12">
+            <article class="card paper-card reveal card--clickable" data-link="https://arxiv.org/abs/2601.21323" data-formula="∇L(θ) → adversarial">
+              <div class="paper-card__badge">Featured</div>
+              <img src="assets/images/advML.png" alt="Adversarial Vulnerability Transcends Computational Paradigms: Feature Engineering Provides No Defense Against Neural Adversarial Transfer figure" class="paper-card__image" loading="lazy">
+              <div class="paper-card__content">
+                <h3 class="paper-card__title">Adversarial Vulnerability Transcends Computational Paradigms: Feature Engineering Provides No Defense Against Neural Adversarial Transfer</h3>
+                <p class="paper-card__authors">Achraf Hsain, Ahmed Abdelkader, Emmanuel Baldwin Mbaya, Hamoud Aljamaan</p>
+                <p class="paper-card__venue">arXiv 2026</p>
+                <p class="paper-card__abstract">Deep neural networks are vulnerable to adversarial examples--inputs with imperceptible perturbations causing misclassification. While adversarial transfer within neural networks is well-documented, whether classical ML pipelines using handcrafted features inherit this vulnerability when attacked via...</p>
+                <div class="paper-card__tags tags"><span class="tag tag--value">Adversarial ML</span><span class="tag">HOG</span><span class="tag tag--action">Transfer Attacks</span><span class="tag">Computer Vision</span></div>
+                <div class="paper-card__actions"><a href="https://arxiv.org/abs/2601.21323" class="btn btn--ghost btn--sm" target="_blank" rel="noopener noreferrer">Link</a><button class="btn btn--ghost btn--sm bibtex-btn" data-bibtex="  @misc{hsain2026adversarialvulnerabilitytranscendscomputational,&#10;      title={Adversarial Vulnerability Transcends Computational Paradigms: Feature Engineering Provides No Defense Against Neural Adversarial Transfer}, &#10;      author={Achraf Hsain and Ahmed Abdelkader and Emmanuel Baldwin Mbaya and Hamoud Aljamaan},&#10;      year={2026},&#10;      eprint={2601.21323},&#10;      archivePrefix={arXiv},&#10;      primaryClass={cs.LG},&#10;      url={https://arxiv.org/abs/2601.21323}, &#10;    }">BibTeX</button></div>
+              </div>
+            </article>
+            <article class="card paper-card reveal card--clickable" data-link="https://arxiv.org/abs/2403.14702" data-formula="P(response|context)">
+              <div class="paper-card__badge">Featured</div>
+              <img src="assets/images/LLMChatbot.svg" alt="Large language model-powered chatbots for internationalizing student support in higher education figure" class="paper-card__image" loading="lazy">
+              <div class="paper-card__content">
+                <h3 class="paper-card__title">Large language model-powered chatbots for internationalizing student support in higher education</h3>
+                <p class="paper-card__authors">Achraf Hsain, Hamza El Housni</p>
+                <p class="paper-card__venue">The Internationalization of Higher Education and Digital Transformation: Addressing Current and Future Possibilities in Oujda, Morocco 2024</p>
+                <p class="paper-card__abstract">This research explores the integration of chatbot technology powered by GPT-3.5 and GPT-4 Turbo into higher education to enhance internationalization and leverage digital transformation. It delves into the design, implementation, and application of Large Language Models (LLMs) for improving student ...</p>
+                <div class="paper-card__tags tags"><span class="tag tag--reward">LLM</span><span class="tag tag--action">Chatbots</span><span class="tag">Education</span></div>
+                <div class="paper-card__actions"><a href="https://arxiv.org/abs/2403.14702" class="btn btn--ghost btn--sm" target="_blank" rel="noopener noreferrer">Link</a><button class="btn btn--ghost btn--sm bibtex-btn" data-bibtex="  @misc{hsain2024largelanguagemodelpoweredchatbots,&#10;      title={Large language model-powered chatbots for internationalizing student support in higher education}, &#10;      author={Achraf Hsain and Hamza El Housni},&#10;      year={2024},&#10;      eprint={2403.14702},&#10;      archivePrefix={arXiv},&#10;      primaryClass={cs.CY},&#10;      url={https://arxiv.org/abs/2403.14702}, &#10;      }">BibTeX</button></div>
+              </div>
+            </article></div>
+          
+          <div class="mb-12">
+            <a href="papers.html" class="link link-animated">View all publications →</a>
           </div>
-        </div>
-      </section>
-
-      <!-- Education Section -->
-      <section class="section">
-        <div class="container">
-          <h2 class="section-title reveal">Education</h2>
-          <div class="education-list reveal">
-            <div class="education-item">
-              <p class="education-item__degree">Ph.D. in Computer Science</p>
-              <p class="education-item__institution">[University Name] — Advisor: Prof. [Advisor Name]</p>
-              <p class="education-item__year">2022 – Present</p>
-            </div>
-            <div class="education-item">
-              <p class="education-item__degree">M.Sc. in Computer Science</p>
-              <p class="education-item__institution">[Previous University]</p>
-              <p class="education-item__year">2020 – 2022</p>
-            </div>
-            <div class="education-item">
-              <p class="education-item__degree">B.Sc. in Computer Engineering</p>
-              <p class="education-item__institution">[Undergraduate University]</p>
-              <p class="education-item__year">2016 – 2020</p>
-            </div>
+          
+          <!-- Featured Projects -->
+          <h3 class="section-subtitle reveal">Projects</h3>
+          <div class="grid grid--2cols reveal-stagger">
+            <article class="card project-card reveal" data-formula="env.step(action) → s', r">
+              <div class="project-card__badge">Featured</div>
+              <img src="assets/images/project-placeholder.png" alt="RL-Gym-Toolkit screenshot" class="project-card__image" loading="lazy">
+              <h3 class="project-card__title">RL-Gym-Toolkit</h3>
+              <p class="project-card__description">A comprehensive collection of custom OpenAI Gym environments designed for reinforcement learning research. Includes challenging navigation, manipulation, and multi-agent scenarios with configurable difficulty levels.</p>
+              <div class="project-card__tags tags"><span class="tag tag--action">python</span><span class="tag tag--reward">reinforcement-learning</span><span class="tag tag--value">gym</span></div>
+              <div class="project-card__actions"><a href="https://demo.example.com" class="btn btn--ghost btn--sm" target="_blank" rel="noopener noreferrer">Demo</a><a href="https://github.com/achrafhsain/rl-gym-toolkit" class="btn btn--ghost btn--sm" target="_blank" rel="noopener noreferrer">GitHub</a></div>
+            </article></div>
+          
+          <div class="mt-8">
+            <a href="projects.html" class="link link-animated">View all projects →</a>
           </div>
         </div>
       </section>
 
       <!-- Contact Section -->
-      <section class="section" style="background-color: var(--bg-secondary);">
-        <div class="container">
-          <h2 class="section-title reveal">Contact</h2>
-          <div class="prose reveal">
-            <p><strong>Email:</strong> <a href="mailto:achraf@example.com" class="link link-animated">achraf@example.com</a></p>
-            <p><strong>Office:</strong> [Building Name], Room [Number]</p>
-            <p><strong>Address:</strong> [University Address]</p>
-          </div>
+      <section class="section state-space-bg">
+        <div class="container text-center">
+          <h2 class="section-title reveal">Initialize Connection</h2>
+          <p class="text-secondary mb-8 reveal">Ready to exchange information? Let's optimize our collaboration.</p>
           
-          <div class="contact-links mt-8 reveal" style="justify-content: flex-start;">
+          <div class="contact-links reveal">
+            <a href="mailto:achraf@example.com" class="contact-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              Email
+            </a>
             <a href="https://github.com/AchrafHsain7" target="_blank" rel="noopener noreferrer" class="contact-link">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
@@ -267,7 +266,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/>
               </svg>
-              Google Scholar
+              Scholar
             </a>
             <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" class="contact-link">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -284,7 +283,7 @@
     <footer class="footer">
       <div class="container">
         <div class="footer__content">
-          <p class="footer__copyright">© 2025 Achraf Hsain</p>
+          <p class="footer__copyright">© 2025 Achraf Hsain · <span class="footer__formula">∀s∈S: V(s) → optimal</span></p>
           <div class="footer__links">
             <a href="https://github.com/AchrafHsain7" target="_blank" rel="noopener noreferrer" class="footer__link" aria-label="GitHub">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">

@@ -48,7 +48,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Styles -->
   <link rel="stylesheet" href="styles/variables.css?v=6">
@@ -62,14 +62,18 @@
   <!-- Scripts -->
   <script src="scripts/main.js?v=6" defer></script>
   <script src="scripts/scroll-reveal.js?v=6" defer></script>
+  <script src="scripts/page-backgrounds.js?v=7" defer></script>
 </head>
 <body>
   <div class="site-wrapper">
+    <!-- Page Background Animation -->
+    <canvas id="page-background" class="page-bg-canvas" data-theme="knowledge"></canvas>
+    
     <!-- Navigation -->
     <nav class="nav">
       <div class="nav__container">
         <a href="index.html" class="nav__logo">
-          <span class="nav__logo-icon">A</span>
+          <span class="nav__logo-icon"><span>S</span></span>
           Achraf Hsain
         </a>
         
@@ -136,7 +140,8 @@
       <section class="page-header">
         <div class="container">
           <h1 class="page-title reveal">Publications</h1>
-          <p class="text-secondary reveal">Research papers and preprints</p>
+          <p class="text-secondary reveal">Research papers and preprints — nodes in the knowledge graph</p>
+          <div class="formula-display reveal" style="margin-top: var(--space-4);">∇_θ log p(papers|research)</div>
         </div>
       </section>
 

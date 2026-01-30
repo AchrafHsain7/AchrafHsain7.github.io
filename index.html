@@ -1,32 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <script>
-    // Theme system - must run before CSS
-    window.ThemeManager = {
-      key: 'achraf-hsain-theme',
-      get: function() {
-        try {
-          return localStorage.getItem(this.key);
-        } catch(e) { return null; }
-      },
-      set: function(theme) {
-        try {
-          localStorage.setItem(this.key, theme);
-        } catch(e) {}
-        document.documentElement.setAttribute('data-theme', theme);
-      },
-      toggle: function() {
-        var current = document.documentElement.getAttribute('data-theme');
-        this.set(current === 'dark' ? 'light' : 'dark');
-      },
-      init: function() {
-        var stored = this.get();
-        var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-        document.documentElement.setAttribute('data-theme', theme);
+    // Theme system - must run before CSS loads
+    // Sets data-theme on <html> immediately to prevent flash
+    (function() {
+      var key = 'achraf-hsain-theme';
+      var stored = null;
+      try { stored = localStorage.getItem(key); } catch(e) {}
+      
+      // Determine theme: use stored preference, or detect system preference, or default to dark
+      var theme = stored || (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+      
+      // Apply immediately
+      document.documentElement.setAttribute('data-theme', theme);
+      
+      // Save to localStorage if not already stored (ensures persistence)
+      if (!stored) {
+        try { localStorage.setItem(key, theme); } catch(e) {}
       }
-    };
-    window.ThemeManager.init();
+      
+      // Expose ThemeManager for toggle functionality
+      window.ThemeManager = {
+        key: key,
+        get: function() {
+          try { return localStorage.getItem(this.key); } catch(e) { return null; }
+        },
+        set: function(theme) {
+          try { localStorage.setItem(this.key, theme); } catch(e) {}
+          document.documentElement.setAttribute('data-theme', theme);
+        },
+        toggle: function() {
+          var current = document.documentElement.getAttribute('data-theme') || 'dark';
+          this.set(current === 'dark' ? 'light' : 'dark');
+        }
+      };
+    })();
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -48,22 +57,22 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Styles -->
-  <link rel="stylesheet" href="styles/variables.css">
-  <link rel="stylesheet" href="styles/reset.css">
-  <link rel="stylesheet" href="styles/base.css">
-  <link rel="stylesheet" href="styles/layout.css">
-  <link rel="stylesheet" href="styles/components.css">
-  <link rel="stylesheet" href="styles/utilities.css">
-  <link rel="stylesheet" href="styles/animations.css">
+  <link rel="stylesheet" href="styles/variables.css?v=6">
+  <link rel="stylesheet" href="styles/reset.css?v=6">
+  <link rel="stylesheet" href="styles/base.css?v=6">
+  <link rel="stylesheet" href="styles/layout.css?v=6">
+  <link rel="stylesheet" href="styles/components.css?v=6">
+  <link rel="stylesheet" href="styles/utilities.css?v=6">
+  <link rel="stylesheet" href="styles/animations.css?v=6">
   
   <!-- Scripts -->
-  <script src="scripts/main.js" defer></script>
-  <script src="scripts/particles.js" defer></script>
-  <script src="scripts/scroll-reveal.js" defer></script>
-  <script src="scripts/typing.js" defer></script>
+  <script src="scripts/main.js?v=6" defer></script>
+  <script src="scripts/particles.js?v=6" defer></script>
+  <script src="scripts/scroll-reveal.js?v=6" defer></script>
+  <script src="scripts/typing.js?v=6" defer></script>
 </head>
 <body>
   <div class="site-wrapper">
@@ -71,7 +80,7 @@
     <nav class="nav">
       <div class="nav__container">
         <a href="index.html" class="nav__logo">
-          <span class="nav__logo-icon">A</span>
+          <span class="nav__logo-icon"><span>S</span></span>
           Achraf Hsain
         </a>
         
@@ -139,7 +148,10 @@
         <div class="hero">
           <h1 class="hero__name"></h1>
           <p class="hero__title"></p>
-          <p class="hero__tagline animate-fade-in-up animate-delay-6">Exploring the intersection of reinforcement learning, attention mechanisms, and robotics to build intelligent systems that learn and adapt.</p>
+          <p class="hero__tagline animate-fade-in-up animate-delay-6">Navigating the state space of intelligence — from reward signals to optimal policies. Building agents that learn, adapt, and discover.</p>
+          <div class="hero__formula animate-fade-in-up animate-delay-6">
+            <span class="formula-display">π*(s) = argmax<sub>a</sub> Q*(s,a)</span>
+          </div>
         </div>
         <div class="hero__scroll">
           <span>Scroll</span>
@@ -154,17 +166,31 @@
         <div class="container">
           <div class="prose reveal">
             <h2 class="section-title">Hello, World</h2>
-            <p class="lead">I'm a PhD student passionate about pushing the boundaries of machine learning and artificial intelligence. My research focuses on developing novel approaches to reinforcement learning and understanding how attention mechanisms can improve learning efficiency in complex environments.</p>
-            <p>When I'm not training models or debugging code, you'll find me exploring new ideas at the intersection of theory and practice, always seeking elegant solutions to challenging problems. I believe in open science and sharing knowledge with the community.</p>
+            <p class="lead">I'm a PhD student exploring the mathematical foundations of intelligent decision-making. My research spans <span class="math-accent">reinforcement learning</span>, information theory, and optimization — seeking principled approaches to building agents that learn effectively from experience.</p>
+            <p>From Bellman equations to policy gradients, I'm fascinated by how mathematical elegance translates into practical algorithms. When I'm not deriving bounds or debugging reward signals, you'll find me exploring the intersection of theory and practice.</p>
+            <div class="agent-status">Agent Status: Learning</div>
             <a href="about.html" class="link link-animated">Read more about me →</a>
           </div>
         </div>
       </section>
 
       <!-- Featured Work Section -->
-      <section class="section" style="background-color: var(--bg-secondary);">
+      <section class="section section--featured">
         <div class="container">
           <h2 class="section-title reveal">Featured Work</h2>
+          
+          <!-- Mini trajectory visualization -->
+          <div class="trajectory reveal mb-8" style="max-width: 400px;">
+            <div class="trajectory__point">
+              <span class="text-sm text-secondary">Research Direction</span>
+            </div>
+            <div class="trajectory__point trajectory__point--reward">
+              <span class="text-sm text-secondary">Publication</span>
+            </div>
+            <div class="trajectory__point trajectory__point--terminal">
+              <span class="text-sm text-secondary">Impact</span>
+            </div>
+          </div>
           
           <!-- Featured Papers -->
           <h3 class="section-subtitle reveal">Recent Publications</h3>
@@ -217,10 +243,10 @@
       </section>
 
       <!-- Contact Section -->
-      <section class="section">
+      <section class="section state-space-bg">
         <div class="container text-center">
-          <h2 class="section-title reveal">Get in Touch</h2>
-          <p class="text-secondary mb-8 reveal">Feel free to reach out for collaborations, questions, or just to say hello!</p>
+          <h2 class="section-title reveal">Initialize Connection</h2>
+          <p class="text-secondary mb-8 reveal">Ready to exchange information? Let's optimize our collaboration.</p>
           
           <div class="contact-links reveal">
             <a href="mailto:achraf@example.com" class="contact-link">
@@ -257,7 +283,7 @@
     <footer class="footer">
       <div class="container">
         <div class="footer__content">
-          <p class="footer__copyright">© 2025 Achraf Hsain</p>
+          <p class="footer__copyright">© 2025 Achraf Hsain · <span class="footer__formula">∀s∈S: V(s) → optimal</span></p>
           <div class="footer__links">
             <a href="https://github.com/AchrafHsain7" target="_blank" rel="noopener noreferrer" class="footer__link" aria-label="GitHub">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
