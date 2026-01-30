@@ -2,7 +2,7 @@
 slug: "rl-gym-toolkit"
 title: "RL-Gym-Toolkit"
 description: "Custom OpenAI Gym environments for RL research"
-image: "assets/images/projects/project-placeholder.png"
+image: "assets/images/project-placeholder.png"
 demo: "https://demo.example.com"
 github: "https://github.com/achrafhsain/rl-gym-toolkit"
 tags:

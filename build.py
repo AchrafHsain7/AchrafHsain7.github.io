@@ -212,7 +212,7 @@ def generate_paper_card(paper):
     # Build actions HTML
     actions = []
     if arxiv:
-        actions.append(f'<a href="{escape_html(arxiv)}" class="btn btn--ghost btn--sm" target="_blank" rel="noopener noreferrer">arXiv</a>')
+        actions.append(f'<a href="{escape_html(arxiv)}" class="btn btn--ghost btn--sm" target="_blank" rel="noopener noreferrer">Link</a>')
     if pdf:
         actions.append(f'<a href="{escape_html(pdf)}" class="btn btn--ghost btn--sm" target="_blank" rel="noopener noreferrer">PDF</a>')
     if code:
