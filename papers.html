@@ -1,6 +1,33 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
+  <script>
+    // Theme system - must run before CSS
+    window.ThemeManager = {
+      key: 'achraf-hsain-theme',
+      get: function() {
+        try {
+          return localStorage.getItem(this.key);
+        } catch(e) { return null; }
+      },
+      set: function(theme) {
+        try {
+          localStorage.setItem(this.key, theme);
+        } catch(e) {}
+        document.documentElement.setAttribute('data-theme', theme);
+      },
+      toggle: function() {
+        var current = document.documentElement.getAttribute('data-theme');
+        this.set(current === 'dark' ? 'light' : 'dark');
+      },
+      init: function() {
+        var stored = this.get();
+        var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      }
+    };
+    window.ThemeManager.init();
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Publications by Achraf Hsain - Research papers in machine learning, reinforcement learning, and robotics.">
@@ -109,7 +136,20 @@
         <div class="container">
           <div class="papers-list">
             
-            <article class="card paper-card reveal">
+            <article class="card paper-card reveal card--clickable" data-link="https://arxiv.org/abs/2601.21323">
+              <div class="paper-card__badge">Featured</div>
+              <img src="assets/images/advML.png" alt="Adversarial Vulnerability Transcends Computational Paradigms: Feature Engineering Provides No Defense Against Neural Adversarial Transfer figure" class="paper-card__image" loading="lazy">
+              <div class="paper-card__content">
+                <h3 class="paper-card__title">Adversarial Vulnerability Transcends Computational Paradigms: Feature Engineering Provides No Defense Against Neural Adversarial Transfer</h3>
+                <p class="paper-card__authors">Achraf Hsain, Ahmed Abdelkader, Emmanuel Baldwin Mbaya, Hamoud Aljamaan</p>
+                <p class="paper-card__venue">arXiv 2026</p>
+                <p class="paper-card__abstract">Deep neural networks are vulnerable to adversarial examples--inputs with imperceptible perturbations causing misclassification. While adversarial transfer within neural networks is well-documented, whether classical ML pipelines using handcrafted features inherit this vulnerability when attacked via...</p>
+                <div class="paper-card__tags tags"><span class="tag">Adversarial ML</span><span class="tag">HOG</span><span class="tag">Transfer Attacks</span><span class="tag">Computer Vision</span></div>
+                <div class="paper-card__actions"><a href="https://arxiv.org/abs/2601.21323" class="btn btn--ghost btn--sm" target="_blank" rel="noopener noreferrer">Link</a><button class="btn btn--ghost btn--sm bibtex-btn" data-bibtex="  @misc{hsain2026adversarialvulnerabilitytranscendscomputational,&#10;      title={Adversarial Vulnerability Transcends Computational Paradigms: Feature Engineering Provides No Defense Against Neural Adversarial Transfer}, &#10;      author={Achraf Hsain and Ahmed Abdelkader and Emmanuel Baldwin Mbaya and Hamoud Aljamaan},&#10;      year={2026},&#10;      eprint={2601.21323},&#10;      archivePrefix={arXiv},&#10;      primaryClass={cs.LG},&#10;      url={https://arxiv.org/abs/2601.21323}, &#10;    }">BibTeX</button></div>
+              </div>
+            </article>
+
+            <article class="card paper-card reveal card--clickable" data-link="https://arxiv.org/abs/2512.22672">
               
               <img src="assets/images/QMLCFD.png" alt="Quantum Generative Models for Computational Fluid Dynamics: A First Exploration of Latent Space Learning in Lattice Boltzmann Simulations figure" class="paper-card__image" loading="lazy">
               <div class="paper-card__content">
@@ -122,7 +162,7 @@
               </div>
             </article>
 
-            <article class="card paper-card reveal">
+            <article class="card paper-card reveal card--clickable" data-link="https://arxiv.org/abs/2412.10977">
               
               <img src="assets/images/PC3D.png" alt="Point Cloud to Mesh Reconstruction: Methods, Trade-offs, and Implementation Guide figure" class="paper-card__image" loading="lazy">
               <div class="paper-card__content">
@@ -135,7 +175,7 @@
               </div>
             </article>
 
-            <article class="card paper-card reveal">
+            <article class="card paper-card reveal card--clickable" data-link="https://ieeexplore.ieee.org/abstract/document/10833526">
               
               <img src="assets/images/TinyAquapoIEEE.png" alt="Tiny Machine Learning for Real-Time Aquaculture Monitoring: A Case Study in Morocco figure" class="paper-card__image" loading="lazy">
               <div class="paper-card__content">
@@ -148,7 +188,7 @@
               </div>
             </article>
 
-            <article class="card paper-card reveal">
+            <article class="card paper-card reveal card--clickable" data-link="https://arxiv.org/abs/2403.14702">
               <div class="paper-card__badge">Featured</div>
               <img src="assets/images/LLMChatbot.svg" alt="Large language model-powered chatbots for internationalizing student support in higher education figure" class="paper-card__image" loading="lazy">
               <div class="paper-card__content">

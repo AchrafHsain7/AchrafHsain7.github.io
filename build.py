@@ -201,6 +201,9 @@ def generate_paper_card(paper):
     tags = paper.get("tags", [])
     featured = paper.get("featured", False)
     
+    # Primary link for the card (arxiv preferred, then pdf)
+    primary_link = arxiv or pdf or ""
+    
     # Build tags HTML
     tags_html = ""
     if tags:
@@ -227,8 +230,15 @@ def generate_paper_card(paper):
     
     featured_badge = '<div class="paper-card__badge">Featured</div>' if featured else ''
     
+    # Add clickable class and data-link if there's a primary link
+    card_class = "card paper-card reveal"
+    data_link_attr = ""
+    if primary_link:
+        card_class += " card--clickable"
+        data_link_attr = f' data-link="{escape_html(primary_link)}"'
+    
     return f'''
-            <article class="card paper-card reveal">
+            <article class="{card_class}"{data_link_attr}>
               {featured_badge}
               <img src="{escape_html(image)}" alt="{title} figure" class="paper-card__image" loading="lazy">
               <div class="paper-card__content">
@@ -291,8 +301,35 @@ def generate_project_card(project):
 def get_page_header():
     """Return the common page header HTML."""
     return '''<!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
+  <script>
+    // Theme system - must run before CSS
+    window.ThemeManager = {
+      key: 'achraf-hsain-theme',
+      get: function() {
+        try {
+          return localStorage.getItem(this.key);
+        } catch(e) { return null; }
+      },
+      set: function(theme) {
+        try {
+          localStorage.setItem(this.key, theme);
+        } catch(e) {}
+        document.documentElement.setAttribute('data-theme', theme);
+      },
+      toggle: function() {
+        var current = document.documentElement.getAttribute('data-theme');
+        this.set(current === 'dark' ? 'light' : 'dark');
+      },
+      init: function() {
+        var stored = this.get();
+        var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      }
+    };
+    window.ThemeManager.init();
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Achraf Hsain">
@@ -605,6 +642,78 @@ A comprehensive collection of custom OpenAI Gym environments designed for reinfo
     print("  Created sample content files in content/papers/ and content/projects/")
 
 
+def build_featured_index():
+    """Update the featured section in index.html with content from markdown files."""
+    print("Updating featured items in index.html...")
+    
+    # Load papers and projects
+    papers = load_content_files("papers")
+    projects = load_content_files("projects")
+    
+    # Get featured items
+    featured_papers = [p for p in papers if p.get("featured", False)]
+    featured_projects = [p for p in projects if p.get("featured", False)]
+    
+    # Sort them
+    featured_papers = sort_papers(featured_papers)[:2]  # Max 2 featured papers
+    featured_projects = sort_projects(featured_projects)[:2]  # Max 2 featured projects
+    
+    print(f"  Found {len(featured_papers)} featured papers and {len(featured_projects)} featured projects")
+    
+    # Read current index.html
+    index_path = OUTPUT_DIR / "index.html"
+    if not index_path.exists():
+        print("  Warning: index.html not found, skipping featured update")
+        return
+    
+    with open(index_path, "r", encoding="utf-8") as f:
+        content = f.read()
+    
+    # Generate featured papers HTML
+    if featured_papers:
+        papers_html = ""
+        for paper in featured_papers:
+            papers_html += generate_paper_card(paper)
+        
+        # Find and replace the papers section
+        # Look for the pattern between "Recent Publications" heading and "View all publications" link
+        import re
+        papers_pattern = r'(<h3 class="section-subtitle reveal">Recent Publications</h3>\s*<div class="stack--xl reveal-stagger mb-12">)(.*?)(</div>\s*<div class="mb-12">\s*<a href="papers\.html")'
+        
+        replacement = r'\1' + papers_html + r'\3'
+        new_content = re.sub(papers_pattern, replacement, content, flags=re.DOTALL)
+        
+        if new_content != content:
+            content = new_content
+            print("  Updated featured papers section")
+        else:
+            print("  Warning: Could not find featured papers section to update")
+    
+    # Generate featured projects HTML
+    if featured_projects:
+        projects_html = ""
+        for project in featured_projects:
+            projects_html += generate_project_card(project)
+        
+        # Find and replace the projects section
+        projects_pattern = r'(<h3 class="section-subtitle reveal">Projects</h3>\s*<div class="grid grid--2cols reveal-stagger">)(.*?)(</div>\s*<div class="mt-8">\s*<a href="projects\.html")'
+        
+        replacement = r'\1' + projects_html + r'\3'
+        new_content = re.sub(projects_pattern, replacement, content, flags=re.DOTALL)
+        
+        if new_content != content:
+            content = new_content
+            print("  Updated featured projects section")
+        else:
+            print("  Warning: Could not find featured projects section to update")
+    
+    # Write updated index.html
+    with open(index_path, "w", encoding="utf-8") as f:
+        f.write(content)
+    
+    print("  Written updated index.html")
+
+
 # =============================================================================
 # Main
 # =============================================================================
@@ -635,6 +744,7 @@ def main():
     else:
         build_papers_page()
         build_projects_page()
+        build_featured_index()
     
     print("=" * 60)
     print("Build complete!")

@@ -208,11 +208,11 @@
     const heroCanvas = document.getElementById('hero-particles');
     if (heroCanvas) {
       new ParticleNetwork('hero-particles', {
-        particleCount: 50,
-        speed: 0.3,
-        connectionDistance: 150,
-        particleOpacity: 0.3,
-        lineOpacity: 0.1
+        particleCount: 80,           // More particles
+        speed: 0.4,                  // Slightly faster
+        connectionDistance: 120,     // Closer connections
+        particleOpacity: 0.5,        // More visible particles
+        lineOpacity: 0.15            // More visible lines
       });
     }
   });

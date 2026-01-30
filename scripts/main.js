@@ -7,52 +7,18 @@
   'use strict';
 
   /* ==========================================================================
-     Theme Management
+     Theme Toggle Button
      ========================================================================== */
 
-  const THEME_KEY = 'achraf-hsain-theme';
-  
-  function getSystemTheme() {
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  function initThemeToggle() {
+    document.querySelectorAll('.theme-toggle').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        if (window.ThemeManager) {
+          window.ThemeManager.toggle();
+        }
+      });
+    });
   }
-
-  function getStoredTheme() {
-    return localStorage.getItem(THEME_KEY);
-  }
-
-  function setTheme(theme) {
-    // Add transition class for smooth color changes
-    document.documentElement.classList.add('theme-transitioning');
-    
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem(THEME_KEY, theme);
-    
-    // Remove transition class after animation completes
-    setTimeout(() => {
-      document.documentElement.classList.remove('theme-transitioning');
-    }, 200);
-  }
-
-  function initTheme() {
-    const storedTheme = getStoredTheme();
-    const theme = storedTheme || getSystemTheme();
-    
-    // Set theme without transition on initial load
-    document.documentElement.setAttribute('data-theme', theme);
-  }
-
-  function toggleTheme() {
-    const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    setTheme(newTheme);
-  }
-
-  // Listen for system theme changes
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-    if (!getStoredTheme()) {
-      setTheme(e.matches ? 'dark' : 'light');
-    }
-  });
 
   /* ==========================================================================
      Mobile Navigation
@@ -84,35 +50,18 @@
       closeBtn.addEventListener('click', closeMobileNav);
     }
 
-    // Close on background click
-    mobileNav.addEventListener('click', (e) => {
-      if (e.target === mobileNav) {
-        closeMobileNav();
-      }
+    mobileNav.addEventListener('click', function(e) {
+      if (e.target === mobileNav) closeMobileNav();
     });
 
-    // Close on link click
-    mobileLinks.forEach(link => {
+    mobileLinks.forEach(function(link) {
       link.addEventListener('click', closeMobileNav);
     });
 
-    // Close on escape key
-    document.addEventListener('keydown', (e) => {
+    document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape' && mobileNav.classList.contains('is-open')) {
         closeMobileNav();
       }
-    });
-  }
-
-  /* ==========================================================================
-     Theme Toggle Button
-     ========================================================================== */
-
-  function initThemeToggle() {
-    const toggleBtns = document.querySelectorAll('.theme-toggle');
-    
-    toggleBtns.forEach(btn => {
-      btn.addEventListener('click', toggleTheme);
     });
   }
 
@@ -124,15 +73,13 @@
     const currentPath = window.location.pathname;
     const navLinks = document.querySelectorAll('.nav__link, .nav__mobile-link');
     
-    navLinks.forEach(link => {
+    navLinks.forEach(function(link) {
       const href = link.getAttribute('href');
       
-      // Handle home page
-      if ((currentPath === '/' || currentPath.endsWith('/index.html')) && 
+      if ((currentPath === '/' || currentPath.endsWith('/index.html') || currentPath.endsWith('/')) && 
           (href === '/' || href === 'index.html' || href === './')) {
         link.classList.add('nav__link--active', 'nav__mobile-link--active');
       }
-      // Handle other pages
       else if (href && currentPath.includes(href.replace('.html', '').replace('./', ''))) {
         link.classList.add('nav__link--active', 'nav__mobile-link--active');
       }
@@ -140,77 +87,38 @@
   }
 
   /* ==========================================================================
-     Smooth Scroll for Anchor Links
-     ========================================================================== */
-
-  function initSmoothScroll() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          e.preventDefault();
-          targetElement.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
-  }
-
-  /* ==========================================================================
-     Card Click Handler (for clickable cards)
+     Card Click Handler
      ========================================================================== */
 
   function initCardClicks() {
-    const clickableCards = document.querySelectorAll('.card--clickable');
-    
-    clickableCards.forEach(card => {
-      const mainLink = card.querySelector('a[data-card-link]');
-      if (!mainLink) return;
+    document.querySelectorAll('.card--clickable').forEach(function(card) {
+      const dataLink = card.getAttribute('data-link');
+      if (!dataLink) return;
 
-      card.addEventListener('click', (e) => {
-        // Don't trigger if clicking on a button or link inside the card
+      card.addEventListener('click', function(e) {
         if (e.target.closest('a, button')) return;
-        
-        // Navigate to the main link
-        window.location.href = mainLink.href;
+        window.open(dataLink, '_blank', 'noopener,noreferrer');
       });
     });
   }
 
   /* ==========================================================================
-     Copy BibTeX Functionality
+     Copy BibTeX
      ========================================================================== */
 
   function initBibtexCopy() {
-    const bibtexBtns = document.querySelectorAll('[data-bibtex]');
-    
-    bibtexBtns.forEach(btn => {
-      btn.addEventListener('click', async (e) => {
+    document.querySelectorAll('[data-bibtex]').forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
         
         const bibtex = btn.getAttribute('data-bibtex');
         
-        try {
-          await navigator.clipboard.writeText(bibtex);
-          
-          // Visual feedback
-          const originalText = btn.textContent;
+        navigator.clipboard.writeText(bibtex).then(function() {
+          const original = btn.textContent;
           btn.textContent = 'Copied!';
-          btn.classList.add('btn--success');
-          
-          setTimeout(() => {
-            btn.textContent = originalText;
-            btn.classList.remove('btn--success');
-          }, 2000);
-        } catch (err) {
-          console.error('Failed to copy BibTeX:', err);
-        }
+          setTimeout(function() { btn.textContent = original; }, 2000);
+        });
       });
     });
   }
@@ -219,15 +127,10 @@
      Initialize
      ========================================================================== */
 
-  // Initialize theme before DOM is fully loaded to prevent flash
-  initTheme();
-
-  // Initialize everything else when DOM is ready
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', function() {
     initThemeToggle();
     initMobileNav();
     initActiveNavLink();
-    initSmoothScroll();
     initCardClicks();
     initBibtexCopy();
   });

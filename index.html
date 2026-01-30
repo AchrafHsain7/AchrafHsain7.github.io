@@ -1,6 +1,33 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
+  <script>
+    // Theme system - must run before CSS
+    window.ThemeManager = {
+      key: 'achraf-hsain-theme',
+      get: function() {
+        try {
+          return localStorage.getItem(this.key);
+        } catch(e) { return null; }
+      },
+      set: function(theme) {
+        try {
+          localStorage.setItem(this.key, theme);
+        } catch(e) {}
+        document.documentElement.setAttribute('data-theme', theme);
+      },
+      toggle: function() {
+        var current = document.documentElement.getAttribute('data-theme');
+        this.set(current === 'dark' ? 'light' : 'dark');
+      },
+      init: function() {
+        var stored = this.get();
+        var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      }
+    };
+    window.ThemeManager.init();
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Achraf Hsain - PhD Student and Machine Learning Researcher. Personal academic portfolio showcasing research, publications, and projects.">
@@ -36,6 +63,7 @@
   <script src="scripts/main.js" defer></script>
   <script src="scripts/particles.js" defer></script>
   <script src="scripts/scroll-reveal.js" defer></script>
+  <script src="scripts/typing.js" defer></script>
 </head>
 <body>
   <div class="site-wrapper">
@@ -108,10 +136,10 @@
       <!-- Hero Section -->
       <section class="section section--hero">
         <canvas id="hero-particles" class="hero__canvas"></canvas>
-        <div class="hero animate-fade-in-up">
-          <h1 class="hero__name">Achraf Hsain</h1>
-          <p class="hero__title">PhD Student · Machine Learning Researcher</p>
-          <p class="hero__tagline">Exploring the intersection of reinforcement learning, attention mechanisms, and robotics to build intelligent systems that learn and adapt.</p>
+        <div class="hero">
+          <h1 class="hero__name"></h1>
+          <p class="hero__title"></p>
+          <p class="hero__tagline animate-fade-in-up animate-delay-6">Exploring the intersection of reinforcement learning, attention mechanisms, and robotics to build intelligent systems that learn and adapt.</p>
         </div>
         <div class="hero__scroll">
           <span>Scroll</span>
@@ -141,50 +169,30 @@
           <!-- Featured Papers -->
           <h3 class="section-subtitle reveal">Recent Publications</h3>
           <div class="stack--xl reveal-stagger mb-12">
-            <!-- Paper Card 1 -->
-            <article class="card paper-card reveal">
-              <img src="assets/images/papers/paper-placeholder.png" alt="Paper figure showing attention mechanism visualization" class="paper-card__image" loading="lazy">
+            <article class="card paper-card reveal card--clickable" data-link="https://arxiv.org/abs/2601.21323">
+              <div class="paper-card__badge">Featured</div>
+              <img src="assets/images/advML.png" alt="Adversarial Vulnerability Transcends Computational Paradigms: Feature Engineering Provides No Defense Against Neural Adversarial Transfer figure" class="paper-card__image" loading="lazy">
               <div class="paper-card__content">
-                <h4 class="paper-card__title">Attention Mechanisms in Deep Reinforcement Learning</h4>
-                <p class="paper-card__authors">Achraf Hsain, Jane Collaborator, John Advisor</p>
-                <p class="paper-card__venue">NeurIPS 2024</p>
-                <p class="paper-card__abstract">We introduce a novel attention-based architecture for deep reinforcement learning that significantly improves sample efficiency and generalization across diverse environments. Our method achieves state-of-the-art results on multiple benchmark tasks.</p>
-                <div class="paper-card__tags tags">
-                  <span class="tag">reinforcement-learning</span>
-                  <span class="tag">attention</span>
-                  <span class="tag">deep-learning</span>
-                </div>
-                <div class="paper-card__actions">
-                  <a href="#" class="btn btn--ghost btn--sm">arXiv</a>
-                  <a href="#" class="btn btn--ghost btn--sm">PDF</a>
-                  <a href="#" class="btn btn--ghost btn--sm">Code</a>
-                  <button class="btn btn--ghost btn--sm" data-bibtex="@inproceedings{hsain2024attention, title={Attention Mechanisms in Deep Reinforcement Learning}, author={Hsain, Achraf}, booktitle={NeurIPS}, year={2024}}">BibTeX</button>
-                </div>
+                <h3 class="paper-card__title">Adversarial Vulnerability Transcends Computational Paradigms: Feature Engineering Provides No Defense Against Neural Adversarial Transfer</h3>
+                <p class="paper-card__authors">Achraf Hsain, Ahmed Abdelkader, Emmanuel Baldwin Mbaya, Hamoud Aljamaan</p>
+                <p class="paper-card__venue">arXiv 2026</p>
+                <p class="paper-card__abstract">Deep neural networks are vulnerable to adversarial examples--inputs with imperceptible perturbations causing misclassification. While adversarial transfer within neural networks is well-documented, whether classical ML pipelines using handcrafted features inherit this vulnerability when attacked via...</p>
+                <div class="paper-card__tags tags"><span class="tag">Adversarial ML</span><span class="tag">HOG</span><span class="tag">Transfer Attacks</span><span class="tag">Computer Vision</span></div>
+                <div class="paper-card__actions"><a href="https://arxiv.org/abs/2601.21323" class="btn btn--ghost btn--sm" target="_blank" rel="noopener noreferrer">Link</a><button class="btn btn--ghost btn--sm bibtex-btn" data-bibtex="  @misc{hsain2026adversarialvulnerabilitytranscendscomputational,&#10;      title={Adversarial Vulnerability Transcends Computational Paradigms: Feature Engineering Provides No Defense Against Neural Adversarial Transfer}, &#10;      author={Achraf Hsain and Ahmed Abdelkader and Emmanuel Baldwin Mbaya and Hamoud Aljamaan},&#10;      year={2026},&#10;      eprint={2601.21323},&#10;      archivePrefix={arXiv},&#10;      primaryClass={cs.LG},&#10;      url={https://arxiv.org/abs/2601.21323}, &#10;    }">BibTeX</button></div>
               </div>
             </article>
-            
-            <!-- Paper Card 2 -->
-            <article class="card paper-card reveal">
-              <img src="assets/images/papers/paper-placeholder.png" alt="Paper figure showing robot arm learning" class="paper-card__image" loading="lazy">
+            <article class="card paper-card reveal card--clickable" data-link="https://arxiv.org/abs/2403.14702">
+              <div class="paper-card__badge">Featured</div>
+              <img src="assets/images/LLMChatbot.svg" alt="Large language model-powered chatbots for internationalizing student support in higher education figure" class="paper-card__image" loading="lazy">
               <div class="paper-card__content">
-                <h4 class="paper-card__title">Efficient Policy Gradient Methods for Robotics</h4>
-                <p class="paper-card__authors">Achraf Hsain, Bob Roboticist</p>
-                <p class="paper-card__venue">ICRA 2024</p>
-                <p class="paper-card__abstract">We present a family of policy gradient algorithms optimized for robotic control tasks, featuring improved variance reduction techniques and adaptive learning rate schedules. Demonstrated on manipulation and locomotion tasks.</p>
-                <div class="paper-card__tags tags">
-                  <span class="tag">robotics</span>
-                  <span class="tag">policy-gradient</span>
-                  <span class="tag">control</span>
-                </div>
-                <div class="paper-card__actions">
-                  <a href="#" class="btn btn--ghost btn--sm">arXiv</a>
-                  <a href="#" class="btn btn--ghost btn--sm">PDF</a>
-                  <a href="#" class="btn btn--ghost btn--sm">Code</a>
-                  <button class="btn btn--ghost btn--sm" data-bibtex="@inproceedings{hsain2024policy, title={Efficient Policy Gradient Methods for Robotics}, author={Hsain, Achraf}, booktitle={ICRA}, year={2024}}">BibTeX</button>
-                </div>
+                <h3 class="paper-card__title">Large language model-powered chatbots for internationalizing student support in higher education</h3>
+                <p class="paper-card__authors">Achraf Hsain, Hamza El Housni</p>
+                <p class="paper-card__venue">The Internationalization of Higher Education and Digital Transformation: Addressing Current and Future Possibilities in Oujda, Morocco 2024</p>
+                <p class="paper-card__abstract">This research explores the integration of chatbot technology powered by GPT-3.5 and GPT-4 Turbo into higher education to enhance internationalization and leverage digital transformation. It delves into the design, implementation, and application of Large Language Models (LLMs) for improving student ...</p>
+                <div class="paper-card__tags tags"><span class="tag">LLM</span><span class="tag">Chatbots</span><span class="tag">Education</span></div>
+                <div class="paper-card__actions"><a href="https://arxiv.org/abs/2403.14702" class="btn btn--ghost btn--sm" target="_blank" rel="noopener noreferrer">Link</a><button class="btn btn--ghost btn--sm bibtex-btn" data-bibtex="  @misc{hsain2024largelanguagemodelpoweredchatbots,&#10;      title={Large language model-powered chatbots for internationalizing student support in higher education}, &#10;      author={Achraf Hsain and Hamza El Housni},&#10;      year={2024},&#10;      eprint={2403.14702},&#10;      archivePrefix={arXiv},&#10;      primaryClass={cs.CY},&#10;      url={https://arxiv.org/abs/2403.14702}, &#10;      }">BibTeX</button></div>
               </div>
-            </article>
-          </div>
+            </article></div>
           
           <div class="mb-12">
             <a href="papers.html" class="link link-animated">View all publications →</a>
@@ -193,38 +201,14 @@
           <!-- Featured Projects -->
           <h3 class="section-subtitle reveal">Projects</h3>
           <div class="grid grid--2cols reveal-stagger">
-            <!-- Project Card 1 -->
             <article class="card project-card reveal">
-              <img src="assets/images/projects/project-placeholder.png" alt="RL-Gym-Toolkit screenshot" class="project-card__image" loading="lazy">
-              <h4 class="project-card__title">RL-Gym-Toolkit</h4>
-              <p class="project-card__description">A comprehensive collection of custom OpenAI Gym environments designed for reinforcement learning research. Includes challenging navigation, manipulation, and multi-agent scenarios.</p>
-              <div class="project-card__tags tags">
-                <span class="tag">python</span>
-                <span class="tag">reinforcement-learning</span>
-                <span class="tag">gym</span>
-              </div>
-              <div class="project-card__actions">
-                <a href="#" class="btn btn--ghost btn--sm">Demo</a>
-                <a href="#" class="btn btn--ghost btn--sm">GitHub</a>
-              </div>
-            </article>
-            
-            <!-- Project Card 2 -->
-            <article class="card project-card reveal">
-              <img src="assets/images/projects/project-placeholder.png" alt="Attention-Viz screenshot" class="project-card__image" loading="lazy">
-              <h4 class="project-card__title">Attention-Viz</h4>
-              <p class="project-card__description">An interactive visualization tool for exploring and understanding attention patterns in transformer and attention-based neural networks. Supports multiple architectures.</p>
-              <div class="project-card__tags tags">
-                <span class="tag">visualization</span>
-                <span class="tag">transformers</span>
-                <span class="tag">javascript</span>
-              </div>
-              <div class="project-card__actions">
-                <a href="#" class="btn btn--ghost btn--sm">Demo</a>
-                <a href="#" class="btn btn--ghost btn--sm">GitHub</a>
-              </div>
-            </article>
-          </div>
+              <div class="project-card__badge">Featured</div>
+              <img src="assets/images/project-placeholder.png" alt="RL-Gym-Toolkit screenshot" class="project-card__image" loading="lazy">
+              <h3 class="project-card__title">RL-Gym-Toolkit</h3>
+              <p class="project-card__description">A comprehensive collection of custom OpenAI Gym environments designed for reinforcement learning research. Includes challenging navigation, manipulation, and multi-agent scenarios with configurable difficulty levels.</p>
+              <div class="project-card__tags tags"><span class="tag">python</span><span class="tag">reinforcement-learning</span><span class="tag">gym</span></div>
+              <div class="project-card__actions"><a href="https://demo.example.com" class="btn btn--ghost btn--sm" target="_blank" rel="noopener noreferrer">Demo</a><a href="https://github.com/achrafhsain/rl-gym-toolkit" class="btn btn--ghost btn--sm" target="_blank" rel="noopener noreferrer">GitHub</a></div>
+            </article></div>
           
           <div class="mt-8">
             <a href="projects.html" class="link link-animated">View all projects →</a>
