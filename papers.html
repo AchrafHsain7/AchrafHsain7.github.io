@@ -6,8 +6,6 @@
   <meta name="description" content="Publications by Achraf Hsain - Research papers in machine learning, reinforcement learning, and robotics.">
   <meta name="author" content="Achraf Hsain">
   
-  <title>Publications - Achraf Hsain</title>
-  
   <!-- Favicon -->
   <link rel="icon" href="assets/images/favicon.png" type="image/png">
   
@@ -95,178 +93,61 @@
         </div>
       </div>
     </div>
-
+    <div class="nav__mobile-backdrop"></div>
+    
     <main>
       <!-- Page Header -->
-      <div class="container">
-        <header class="page-header animate-fade-in-up">
-          <h1 class="page-title">Publications</h1>
-        </header>
-      </div>
+      <section class="page-header">
+        <div class="container">
+          <h1 class="page-title reveal">Publications</h1>
+          <p class="text-secondary reveal">Research papers and preprints</p>
+        </div>
+      </section>
 
       <!-- Papers List -->
       <section class="section">
         <div class="container">
-          <div class="stack--xl reveal-stagger">
-            <!-- Paper 1 - 2024 -->
+          <div class="papers-list">
+            
             <article class="card paper-card reveal">
-              <img src="assets/images/papers/paper-placeholder.png" alt="Paper figure showing attention mechanism visualization" class="paper-card__image" loading="lazy">
+              <div class="paper-card__badge">Featured</div>
+              <img src="assets/images/papers/paper-placeholder.png" alt="Attention Mechanisms in Deep Reinforcement Learning figure" class="paper-card__image" loading="lazy">
               <div class="paper-card__content">
-                <h2 class="paper-card__title">Attention Mechanisms in Deep Reinforcement Learning</h2>
+                <h3 class="paper-card__title">Attention Mechanisms in Deep Reinforcement Learning</h3>
                 <p class="paper-card__authors">Achraf Hsain, Jane Collaborator, John Advisor</p>
                 <p class="paper-card__venue">NeurIPS 2024</p>
-                <p class="paper-card__abstract">We introduce a novel attention-based architecture for deep reinforcement learning that significantly improves sample efficiency and generalization across diverse environments. Our method achieves state-of-the-art results on multiple benchmark tasks while maintaining computational efficiency.</p>
-                <div class="paper-card__tags tags">
-                  <span class="tag">reinforcement-learning</span>
-                  <span class="tag">attention</span>
-                  <span class="tag">deep-learning</span>
-                </div>
-                <div class="paper-card__actions">
-                  <a href="#" class="btn btn--ghost btn--sm">arXiv</a>
-                  <a href="#" class="btn btn--ghost btn--sm">PDF</a>
-                  <a href="#" class="btn btn--ghost btn--sm">Code</a>
-                  <button class="btn btn--ghost btn--sm" data-bibtex="@inproceedings{hsain2024attention,
-  title={Attention Mechanisms in Deep Reinforcement Learning},
-  author={Hsain, Achraf and Collaborator, Jane and Advisor, John},
-  booktitle={Advances in Neural Information Processing Systems},
-  year={2024}
-}">BibTeX</button>
-                </div>
-              </div>
-            </article>
-
-            <!-- Paper 2 - 2024 -->
-            <article class="card paper-card reveal">
-              <img src="assets/images/papers/paper-placeholder.png" alt="Paper figure showing robot arm learning" class="paper-card__image" loading="lazy">
-              <div class="paper-card__content">
-                <h2 class="paper-card__title">Efficient Policy Gradient Methods for Robotics</h2>
-                <p class="paper-card__authors">Achraf Hsain, Bob Roboticist</p>
-                <p class="paper-card__venue">ICRA 2024</p>
-                <p class="paper-card__abstract">We present a family of policy gradient algorithms optimized for robotic control tasks, featuring improved variance reduction techniques and adaptive learning rate schedules. Our methods demonstrate superior performance on both manipulation and locomotion tasks.</p>
-                <div class="paper-card__tags tags">
-                  <span class="tag">robotics</span>
-                  <span class="tag">policy-gradient</span>
-                  <span class="tag">control</span>
-                </div>
-                <div class="paper-card__actions">
-                  <a href="#" class="btn btn--ghost btn--sm">arXiv</a>
-                  <a href="#" class="btn btn--ghost btn--sm">PDF</a>
-                  <a href="#" class="btn btn--ghost btn--sm">Code</a>
-                  <button class="btn btn--ghost btn--sm" data-bibtex="@inproceedings{hsain2024policy,
-  title={Efficient Policy Gradient Methods for Robotics},
-  author={Hsain, Achraf and Roboticist, Bob},
-  booktitle={IEEE International Conference on Robotics and Automation},
-  year={2024}
-}">BibTeX</button>
-                </div>
-              </div>
-            </article>
-
-            <!-- Paper 3 - 2023 -->
-            <article class="card paper-card reveal">
-              <img src="assets/images/papers/paper-placeholder.png" alt="Paper figure showing multi-agent coordination" class="paper-card__image" loading="lazy">
-              <div class="paper-card__content">
-                <h2 class="paper-card__title">Multi-Agent Coordination Under Uncertainty</h2>
-                <p class="paper-card__authors">Achraf Hsain, Alice MultiAgent, Charlie Coordinator</p>
-                <p class="paper-card__venue">AAMAS 2023</p>
-                <p class="paper-card__abstract">We propose a novel framework for multi-agent coordination that handles uncertainty in both the environment and other agents' behaviors. Our approach combines communication protocols with robust planning under uncertainty.</p>
-                <div class="paper-card__tags tags">
-                  <span class="tag">multi-agent</span>
-                  <span class="tag">coordination</span>
-                  <span class="tag">uncertainty</span>
-                </div>
-                <div class="paper-card__actions">
-                  <a href="#" class="btn btn--ghost btn--sm">arXiv</a>
-                  <a href="#" class="btn btn--ghost btn--sm">PDF</a>
-                  <a href="#" class="btn btn--ghost btn--sm">Code</a>
-                  <button class="btn btn--ghost btn--sm" data-bibtex="@inproceedings{hsain2023multiagent,
-  title={Multi-Agent Coordination Under Uncertainty},
-  author={Hsain, Achraf and MultiAgent, Alice and Coordinator, Charlie},
-  booktitle={International Conference on Autonomous Agents and Multiagent Systems},
-  year={2023}
-}">BibTeX</button>
-                </div>
-              </div>
-            </article>
-
-            <!-- Paper 4 - 2023 -->
-            <article class="card paper-card reveal">
-              <img src="assets/images/papers/paper-placeholder.png" alt="Paper figure showing reward shaping" class="paper-card__image" loading="lazy">
-              <div class="paper-card__content">
-                <h2 class="paper-card__title">Reward Shaping for Sample-Efficient Learning</h2>
-                <p class="paper-card__authors">Achraf Hsain, David Reward</p>
-                <p class="paper-card__venue">AAAI 2023</p>
-                <p class="paper-card__abstract">We investigate automatic reward shaping techniques that preserve optimal policies while dramatically improving sample efficiency. Our theoretical analysis provides guarantees for policy invariance under shaped rewards.</p>
-                <div class="paper-card__tags tags">
-                  <span class="tag">reward-shaping</span>
-                  <span class="tag">sample-efficiency</span>
-                  <span class="tag">theory</span>
-                </div>
-                <div class="paper-card__actions">
-                  <a href="#" class="btn btn--ghost btn--sm">arXiv</a>
-                  <a href="#" class="btn btn--ghost btn--sm">PDF</a>
-                  <button class="btn btn--ghost btn--sm" data-bibtex="@inproceedings{hsain2023reward,
-  title={Reward Shaping for Sample-Efficient Learning},
-  author={Hsain, Achraf and Reward, David},
-  booktitle={AAAI Conference on Artificial Intelligence},
-  year={2023}
-}">BibTeX</button>
-                </div>
-              </div>
-            </article>
-
-            <!-- Paper 5 - 2023 -->
-            <article class="card paper-card reveal">
-              <img src="assets/images/papers/paper-placeholder.png" alt="Paper figure showing sim-to-real transfer" class="paper-card__image" loading="lazy">
-              <div class="paper-card__content">
-                <h2 class="paper-card__title">A Survey of Sim-to-Real Transfer Techniques</h2>
-                <p class="paper-card__authors">Achraf Hsain</p>
-                <p class="paper-card__venue">Preprint 2023</p>
-                <p class="paper-card__abstract">A comprehensive survey of techniques for transferring policies trained in simulation to real-world robots. We categorize existing approaches, discuss their strengths and limitations, and identify promising directions for future research.</p>
-                <div class="paper-card__tags tags">
-                  <span class="tag">sim-to-real</span>
-                  <span class="tag">survey</span>
-                  <span class="tag">transfer-learning</span>
-                </div>
-                <div class="paper-card__actions">
-                  <a href="#" class="btn btn--ghost btn--sm">arXiv</a>
-                  <a href="#" class="btn btn--ghost btn--sm">PDF</a>
-                  <button class="btn btn--ghost btn--sm" data-bibtex="@article{hsain2023survey,
-  title={A Survey of Sim-to-Real Transfer Techniques},
-  author={Hsain, Achraf},
-  journal={arXiv preprint arXiv:2023.xxxxx},
-  year={2023}
-}">BibTeX</button>
-                </div>
+                <p class="paper-card__abstract">This paper introduces novel attention mechanisms for deep reinforcement learning agents, enabling more efficient exploration and better generalization across tasks. We demonstrate significant improvements on standard benchmarks.</p>
+                <div class="paper-card__tags tags"><span class="tag">reinforcement-learning</span><span class="tag">attention</span><span class="tag">deep-learning</span></div>
+                <div class="paper-card__actions"><a href="https://arxiv.org/abs/2024.xxxxx" class="btn btn--ghost btn--sm" target="_blank" rel="noopener noreferrer">arXiv</a><a href="https://github.com/achrafhsain/attention-rl" class="btn btn--ghost btn--sm" target="_blank" rel="noopener noreferrer">Code</a><button class="btn btn--ghost btn--sm bibtex-btn" data-bibtex="  @inproceedings{hsain2024attention,&#10;    title={Attention Mechanisms in Deep Reinforcement Learning},&#10;    author={Hsain, Achraf and Collaborator, Jane and Advisor, John},&#10;    booktitle={NeurIPS},&#10;    year={2024}&#10;  }">BibTeX</button></div>
               </div>
             </article>
           </div>
         </div>
       </section>
     </main>
-
+    
     <!-- Footer -->
     <footer class="footer">
       <div class="container">
         <div class="footer__content">
           <p class="footer__copyright">© 2025 Achraf Hsain</p>
           <div class="footer__links">
-            <a href="https://github.com/AchrafHsain7" target="_blank" rel="noopener noreferrer" class="footer__link" aria-label="GitHub">
+            <a href="https://github.com/AchrafHsain7" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
               </svg>
             </a>
-            <a href="https://scholar.google.com/" target="_blank" rel="noopener noreferrer" class="footer__link" aria-label="Google Scholar">
+            <a href="https://scholar.google.com/" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/>
               </svg>
             </a>
-            <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" class="footer__link" aria-label="LinkedIn">
+            <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
               </svg>
             </a>
-            <a href="mailto:achraf@example.com" class="footer__link" aria-label="Email">
+            <a href="mailto:achraf@example.com" aria-label="Email">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                 <polyline points="22,6 12,13 2,6"></polyline>
