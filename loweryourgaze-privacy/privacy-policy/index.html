@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LowerYourGaze — Privacy policy</title>
+<link rel="icon" href="logo.svg">
+<style>
+@font-face { font-family: Amiri; font-weight: 400; src: url(fonts/amiri-latin-400-normal.woff2) format('woff2'); font-display: swap; }
+@font-face { font-family: Amiri; font-weight: 700; src: url(fonts/amiri-latin-700-normal.woff2) format('woff2'); font-display: swap; }
+:root { --bg: #f5efe3; --surface: #fdfaf3; --ink: #2d2a22; --muted: #6b6455; --line: #e3d9c6; --green: #1e7a4f; --deep: #155c3b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #181613; --surface: #22201c; --ink: #f1eadd; --muted: #aaa190; --line: #37332b; --green: #74c295; --deep: #74c295; } }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+main { max-width: 46rem; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+header { display: flex; align-items: center; gap: .9rem; margin-bottom: 2rem; }
+header img { width: 64px; }
+header span { font: 700 1.5rem/1 Amiri, Georgia, serif; color: var(--deep); }
+h1, h2 { font-family: Amiri, Georgia, serif; color: var(--deep); line-height: 1.2; }
+h1 { font-size: 2.4rem; margin: 0 0 .3rem; }
+h2 { font-size: 1.5rem; margin: 2.2rem 0 .5rem; }
+.date { color: var(--muted); margin: 0 0 1.5rem; }
+.lead { font: 400 1.35rem/1.45 Amiri, Georgia, serif; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 1.1rem 1.3rem; }
+ul { padding-left: 1.2rem; }
+li { margin: .35rem 0; }
+table { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; font-size: .95rem; }
+th, td { text-align: left; vertical-align: top; padding: .65rem .8rem; border-bottom: 1px solid var(--line); }
+th { font-family: Amiri, Georgia, serif; font-size: 1.05rem; color: var(--deep); }
+tr:last-child td { border-bottom: 0; }
+a { color: var(--green); }
+</style>
+</head>
+<body>
+<main>
+<header><img src="logo.svg" alt=""><span>LowerYourGaze</span></header>
+<h1>Privacy policy</h1>
+<p class="date">Effective 17 November 2026</p>
+
+<p class="lead">LowerYourGaze does all of its work inside your browser. It sends nothing about you or your browsing to its makers or to anyone else.</p>
+
+<h2>What the extension does</h2>
+<p>LowerYourGaze is a browser extension that blurs pictures and videos of women on the web pages you visit. To decide what to blur, it looks at the pictures and video frames on each page with image models that are included in the extension and run on your device.</p>
+
+<h2>Information it handles</h2>
+<p>All of the following is processed and kept on your device only.</p>
+<ul>
+<li><strong>Pictures and video frames on the pages you visit.</strong> They are analysed in your browser to decide whether to blur them. To analyse a picture, the extension may read it again from the address the page already uses; that request goes only to the website that hosts the picture, as when the page itself loads it.</li>
+<li><strong>Text around a picture.</strong> Words near a picture can make the check stricter for that picture. The text is read on the page and not kept.</li>
+<li><strong>Your choices.</strong> When you choose Show or Cover for a picture, the extension remembers that choice so it can apply it to that picture and to similar ones.</li>
+</ul>
+
+<h2>What is stored on your device</h2>
+<table>
+<tr><th>Stored</th><th>Why</th></tr>
+<tr><td>Your options, and the sites where you turned the extension off (by site name)</td><td>So your settings stay as you left them</td></tr>
+<tr><td>Learning memory: for each picture you chose Show or Cover, a short numeric signature, your choice and when you made it</td><td>So your choices carry over to the same and similar pictures</td></tr>
+<tr><td>Saved check results, keyed by a hash of the picture</td><td>So a picture is not checked twice</td></tr>
+<tr><td>A speed measurement of your computer</td><td>So video checking adapts to your machine</td></tr>
+</table>
+<p>Pictures are kept only as hashes and short numeric signatures. The extension never stores the pictures themselves, their web addresses, or a history of the pages you visit.</p>
+
+<h2>What is shared</h2>
+<p>Nothing. The extension has no accounts, analytics, advertising, tracking or error reports. It does not sell, transfer or disclose any information, and its makers receive none. It does not load or run code from the internet; everything it runs ships inside the extension.</p>
+
+<h2>Keeping and deleting</h2>
+<p>The stored information stays on your device until you remove it:</p>
+<ul>
+<li>Panel → Advanced → <strong>Delete learning memory</strong> erases the learning memory and saved check results.</li>
+<li>Panel → Advanced → <strong>Reset all options to default</strong> returns your options to their defaults; the sites you turned off stay off until you turn them back on.</li>
+<li>Removing the extension from your browser erases everything it stored.</li>
+</ul>
+
+<h2>Chrome Web Store user data policy</h2>
+<p>The use of information by LowerYourGaze complies with the <a href="https://developer.chrome.com/docs/webstore/program-policies/policies">Chrome Web Store User Data Policy</a>, including the Limited Use requirements. Information is used only to provide the extension's single purpose: blurring pictures and videos of women on the pages you visit.</p>
+
+<h2>Changes</h2>
+<p>If this policy changes, the new version will be posted on this page with a new effective date.</p>
+
+<h2>Contact</h2>
+<p>For questions about this policy, use the contact email shown on the LowerYourGaze page in the Chrome Web Store.</p>
+</main>
+</body>
+</html>
